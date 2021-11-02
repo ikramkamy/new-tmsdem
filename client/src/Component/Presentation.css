@@ -323,7 +323,11 @@ justify-content: flex-start;
     .textFieldContent{
    margin-top: -220px;
     }
-
+    
+.tmsdem{
+    
+    text-align: center;
+}
 }
 
 @media screen and (max-width : 654px) {
