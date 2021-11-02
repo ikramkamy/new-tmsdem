@@ -26,11 +26,10 @@ export default function Home() {
                 <img src={ImgSlide} />
 
                 <div className="titleSlide">
-                    <h1> Nos</h1>
-                    <h2> déménageurs</h2>
-                    <h3> au service de</h3>
-                    <h1 className="votre"> votre</h1>
-                    <h2 className="demenagement"> déménagement</h2>
+                    <h1> Nous nous <span className="occupons"> occupons </span></h1>
+                    <h2> nous même de votre </h2>
+                    <h3> déménagement</h3>
+               
                 </div>
 
 
@@ -52,7 +51,7 @@ export default function Home() {
             <div className="servicesTMSDEM">
                 <div className="serviceContent">
                     <div className="serviceContainer">
-                        <h2> Déménagement PRO</h2>
+                       <h2 className="titleDemenagementPro"> Déménagement PRO</h2>
                         <div className="imgContent">
                             <img src={Pro} className="proimg" />
                         </div>
@@ -93,8 +92,10 @@ export default function Home() {
 
             <div className="planificationStep">
                 <div className="planificationTitle">
-                    <h1> Planifiez Votre</h1>
+
+                  <div>  <h1> Planifiez Votre</h1>
                     <h2> Déménagement Maintenant </h2>
+                    </div>
                 </div>
             </div>
 
@@ -191,7 +192,7 @@ export default function Home() {
                         </div>
 
                         <div className="testimonialName">
-                            <div> Lina Fakhoury </div>
+                            <div className="clientName"> Lina Fakhoury </div>
                         </div>
                         <div className="testimonialText">
                             <div> Surprise très positive! Un service rapide, efficace. Je recommande! </div>

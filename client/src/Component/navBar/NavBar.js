@@ -66,7 +66,7 @@ export default function NavBar() {
 
 <div className="item"><Link to="/">Accueil</Link> </div>
 
-<div className="item"><Link to="/presentation">TMS-DEM</Link></div>
+<div className="item"><Link to="/presentation" style={{"textDecoration" : "none"}}>TMS-DEM</Link></div>
 <div className="item"><Link to="/services">Nos services</Link>  </div>
 <div className="item"><Link to="/e-commerce">Boutique</Link> </div>
 <div className="item"><Link to="">Contact</Link>  </div>
@@ -82,19 +82,18 @@ export default function NavBar() {
 </div>
  </div>
 {fade && <div className="navSmallScreen">
-  <div className="item"><Link to="/">Accueil</Link> </div>
-
-<div className="item"><Link to="/presentation">TMS-DEM</Link></div>
-<div className="item"><Link to="/services">Nos services</Link>  </div>
-<div className="item"><Link to="/e-commerce">Boutique</Link> </div>
-<div className="item"><Link to="">Contact</Link>  </div>
+<div className="item"><Link to="/"   style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Accueil</Link> </div>
+<div className="item"><Link to="/presentation" style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>TMS-DEM</Link></div>
+<div className="item"><Link to="/services"  style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Nos services</Link>  </div>
+<div className="item"><Link to="/e-commerce"  style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Boutique</Link> </div>
+<div className="item"><Link to=""  style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Contact</Link>  </div>
 <div className="btn-devis">
   <button> Demander un devis</button>
 </div>
 
 <div className="itemContainerInfo"> 
-<div className="item emailAdress">  <i class="fas fa-envelope"></i> contact@tms-dem.com </div>
-<div className="item gps">  <i class="fas fa-map-marker-alt"></i> GPS </div>
+<div className="item emailAdress">   contact@tms-dem.com </div>
+<div className="item gps">   GPS </div>
 </div>
    </div>
 

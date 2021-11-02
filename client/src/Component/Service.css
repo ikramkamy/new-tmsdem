@@ -46,14 +46,21 @@ width: 100%;
 border: 1px hidden red;
 height: auto;
 color: white;
-
+text-align: center;
 }
 
 .textSlide h1{
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: 600;
     text-shadow: 13px -7px 20px #000000;
 }
+
+.textSlide .sectionTextSlideTitle {
+    font-size: 1.02em;  
+    font-weight: 600;
+    text-shadow: 13px -7px 20px #000000;
+}
+
 .serviceContainer .pictureTmsDem  img {
     height: 100%;
     width: 100%;
@@ -95,17 +102,21 @@ line-height: 1;
 font-weight: 600;
 font-size: 5em;
 color : #2C216F;
+overflow: hidden;
     }
 
 .servceDetails .serviceDetailsTitle h2{
 font-weight: 600;
-font-size: 2.7em;
+font-size: 2.75em;
+height: auto;
+color : #2C216F;
 }
 
-
+/*
 .servceDetails .serviceDetailsTitle h1 + h2{
     line-height: 20px;
 }
+*/
 .servceDetails .servceDetailsServices{
 border: 1px hidden black;
 height: auto;
@@ -156,13 +167,23 @@ margin-top: 70px;
     margin-top: 30px;
 }
 
-.serviceItem  .buttoncontainer.soto, .serviceItem  .buttoncontainer.stock {
+ .serviceItem  .buttoncontainer.soto, .serviceItem  .buttoncontainer.stock {
     font-size: 2.3em;
     line-height: 1;
-}
+ }
 
-.serviceItem  .buttoncontainer.stock{
+
+
+ .serviceItem  .buttoncontainer.stock  .sectionTitleStockService {
+     font-size: 0.9em;
+ }
+ .serviceItem  .buttoncontainer.stock{
     font-size: 2em;
+ }
+
+
+.serviceItem  .buttoncontainer.soto button {
+    overflow: hidden;
 }
 
 .serviceItem  .buttoncontainer.soto button, .buttoncontainer.stock button{
@@ -183,8 +204,13 @@ margin-top: 70px;
  border: none;
 }
 
+.buttoncontainer.soto {
+    margin-top: 60px;
+}
 
-
+.offreSotoServiceItem{
+    margin-top: -2px;
+}
 .reasonsContainer{
     border: 1px hidden black;
     height: auto;
@@ -228,11 +254,16 @@ margin-top: -65px;
     font-size: 10em;
     color: #2C216F;
     width: 100%;
+    overflow: hidden;
+  
 }
 
 .reasonsContainer .rowTitleReasonContainer h2{
-    font-size: 3.9em;
+    font-size: 3.65em;
  width: 100%;
+ overflow: hidden;
+ font-weight: 600;
+ color: #2C216F;
 }
 
 
@@ -269,6 +300,8 @@ margin-top: 30px;
 .reasonContent .reasonItem h1{
     font-size: 3em;
    color:  #2C216F;
+   border: 1px hidden black;
+   text-align: center;
 }
 
 .reasonContent .reasonItem.troisieme{
@@ -318,11 +351,14 @@ margin-top: 30px;
 .actionContainerItem h1{
  color: #2C216F;
     font-size: 5em;
+
+overflow: hidden;
 }
 
 .actionContainerItem h2{
 font-weight: 600;
-    font-size: 2.4em;
+    font-size: 2.3em;
+    color: #2C216F;
 }
 
 
@@ -334,6 +370,22 @@ font-weight: 600;
 }
 
 /* RESPONSIVE WEB SITE */
+
+
+
+@media screen and (min-width : 1550px) {
+    .servceDetails .servceDetailsServices{
+        border: 1px hidden black;
+        justify-content: center;
+    }
+
+    .serviceItem{
+        margin: 10px;
+    }
+}
+
+
+
 
 
 
@@ -356,11 +408,34 @@ font-weight: 600;
     }
 }
 
+@media screen and (max-width : 882px) {
+    .servceDetails .serviceDetailsTitle h1{
+        text-align: center;
+    }
+
+    .servceDetails .serviceDetailsTitle h2{
+        text-align: center;
+    }
+
+    .servceDetails .serviceDetailsTitle h1 + h2{
+        line-height: 1.5;
+        border: 1px hidden black;
+    }
+}
 
 
 @media screen  and (max-width : 871px){
+    .servceDetails .serviceDetailsTitle h1{
+        text-align: center;
+    }
+
+    .servceDetails .serviceDetailsTitle h2{
+        text-align: center;
+    }
+
     .servceDetails .serviceDetailsTitle h1 + h2{
         line-height: 1.5;
+        border: 1px hidden black;
     }
 
     .reasonContent{
@@ -393,10 +468,17 @@ font-weight: 600;
     }
     .reasonsContainer .rowTitleReasonContainer h1{
         font-size: 7em;
+        text-align: center;
     }
     .reasonsContainer .rowTitleReasonContainer h2{
         font-size: 5em;
+        text-align: center;
     }
+.reasonsContainer .reasonItemPara{
+    text-align: center;
+}
+
+
 }
 
 
@@ -467,6 +549,7 @@ font-weight: 600;
     .serviceItem  .buttoncontainer.soto, .serviceItem  .buttoncontainer.stock {
         font-size: 1.6em;
         line-height: 1;
+    
     }
     
     .serviceItem  .buttoncontainer.stock{
@@ -485,6 +568,9 @@ font-weight: 600;
            font-weight: 300;
            color : #2C216F;
            }
+
+           .serviceItem h3 {
+        text-align: center;}
 }
 
 @media screen and (max-width : 323px) {

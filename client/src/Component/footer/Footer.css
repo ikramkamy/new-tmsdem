@@ -40,13 +40,14 @@
 
 .tmsdemlogo img{
 
-    height: 280px;
-    width: 390px;
+    height: 230px;
+    width: 350px;
 }
+
 .footerposition, .footernumber, .footeremail, .footerclientservice{
     border: 1px hidden red;
     height: auto;
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -54,23 +55,26 @@
 
 }
 
-.addressText{
+ .addressText{
     font-size: 1.4em;
     color: white;
     width: 600px;
     text-align: left;
+    border: 1px hidden green;
+ margin: 5px;
 }
 
-
+/*
 .footerIcones +.addressText {
     margin: 10px;
 }
 
-
+*/
 .fas {
     font-size:1.5em;
     color: white;
  margin-left: 78px;
+ border: 1px hidden pink;
 }
 
 .fas.fa-envelope{
@@ -80,12 +84,16 @@ margin-top: 5px;
 .sav, .phone{
     width: 2em;
     margin-left:  78px;
+    
 }
 
 .phone {
     width: 1.5em;  
 }
 
+.footeremail .contacttextFooter, .footerclientservice .clientSAVFooter{
+    width: auto;
+}
 
 @media screen and (max-width : 772px) {
     .fas{
@@ -95,6 +103,17 @@ margin-top: 5px;
     .sav, .phone{
         margin-left:  10px;
     }
+
+.footernumber .addressText, .footerposition .addressText{
+     width: auto;
+ }
+
+ .footerposition .addressText{
+    width: auto;
+  
+ }
+
+   
 }
 
 

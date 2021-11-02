@@ -147,6 +147,7 @@ color: white;
     color: black;
 }
 
+
 .btn-devis{
     border: 1px hidden black;
     height: 40px;
@@ -172,7 +173,7 @@ color: white;
     z-index: 100;
     display: none;
     color: #2C216F;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .navSmallScreen{
@@ -184,26 +185,44 @@ color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 10000000;
+    z-index: 1000000000000;
     background-color: white;
 }
 
 
 .navSmallScreen .item {
-
+margin-top: 10px;
     font-weight: 600;
     font-size: 1.3em;
 }
 
 
+
+.navSmallScreen .item {
+    margin-top: 10px;
+        font-weight: 600;
+        font-size: 1.3em;
+    }
+    
+    .navSmallScreen .item:hover {
+       border-bottom: 2px solid #2C216F;
+        }
+        
 .navSmallScreen .btn-devis {
     margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 0.8em;
 }
 
 
 .navitemTop .phonetopNav{
     margin-right: 6px;
 }
+
+
+
+
+
 
 @media screen and (max-width : 1084px) {
     .navTopInfo{
@@ -296,3 +315,5 @@ justify-content: flex-start;
         justify-content: space-between;
     }
 }
+
+

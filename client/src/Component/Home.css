@@ -33,7 +33,7 @@
     width: 400px;
     position: absolute;
     right: 25px;
-    top: 30px;
+    top: 90px;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -42,13 +42,23 @@
 }
 
 .titleSlide h1{
-    font-size: 9em;
+    font-size: 3.95em;
     font-weight: 800;
     color: #2C216F;
     overflow: hidden;
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Montserrat', sans-serif;
+    border : 1px hidden black;
 }
 
+.titleSlide  .occupons {
+    border: 1px hidden red;
+    font-size: 1.05em;
+    font-weight: 800;
+    color: #2C216F;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+ 
+}
 .titleSlide h3{
     font-size: 2.9em;
     font-weight: 600;
@@ -59,14 +69,16 @@ font-family: 'Montserrat', sans-serif
 }
 
  .titleSlide h2{
-    font-size: 2.8em;
+    font-size: 2.2em;
     font-weight: 600;
+   
     color: #2C216F;
     overflow: hidden;
     text-transform: lowercase;
     font-family: 'Montserrat', sans-serif
 }
 
+/*
 .titleSlide .votre {
     font-size: 5.4em;
     font-weight: 900;
@@ -79,6 +91,9 @@ font-family: 'Montserrat', sans-serif
     font-weight: 600;
     font-family: 'Montserrat', sans-serif
 }
+
+
+*/
  .smallImg{
     border: 4px solid white;
     height: 360px;
@@ -139,8 +154,8 @@ justify-content: space-around;
 
 }
 
-.serviceContainer{
-    border: 2px solid #ED1C24;
+.servicesTMSDEM .serviceContainer{
+    border: 2px hidden #ED1C24;
     width: 270px;
     height: 270px;
     display: flex;
@@ -150,10 +165,13 @@ justify-content: space-around;
 }
 
 
-.serviceContainer h2{
+
+.servicesTMSDEM .serviceContainer h2{
     font-weight: 400;
     font-size: 1.6em;
     color: #2C216F;
+   border: 1px hidden black;
+   text-align: center;
 }
 
 
@@ -199,11 +217,13 @@ color: #2C216F;
     font-weight: 900;
     border: 1px hidden black;
     width: 100%;
+    text-align: center;
+    overflow: hidden;
 }
 
 .planificationTitle h2{
-    font-size: 3em;
-   
+    font-size: 3.3em;
+   text-align: center;
 }
 
 
@@ -420,7 +440,7 @@ width: 30px;
 }
 
 .testimonialText{
-    font-size: 1.4em;
+    font-size: 1.5em;
 }
 
 .testimonialText div{
@@ -428,12 +448,64 @@ width: 30px;
     margin: 20px;
     width: 500px;
     color: #2C216F;
+    font-size: 0.85em;
    
+}
+
+.testimonial h1{
+    font-size: 3.5em;
+    font-weight: 800;
+}
+
+.testimonialName .clientName {
+    font-size: 1em;
+}
+/* ***************** RESPONSIVE EDSIGN ************** */
+
+@media screen and (min-width : 1550px) {
+    .textFiled  {
+        border: 1px hidden black;
+        width: 70%;
+        height: auto;
+        margin-top : 40px;
+        margin-left: 20px;
+    }
+   
+    
+    .textFiled p {
+       text-align: left;
+       font-size: 1.7em;
+       line-height: 40px;
+       color: #414042;
+       letter-spacing: 1px;
+       text-align: justify;
+      border: 1px hidden black;
+      width: 100%;
+    }
+    
+
+
+    .serviceContent{
+        border: 1px hidden pink;
+        width: 1200px;
+     
+        
+        }
+
+
 }
 
 
 
-/* ***************** RESPONSIVE EDSIGN ************** */
+
+
+
+
+
+
+
+
+
 @media screen and (max-width : 1352px) {
     .textFiled  {
         width: 95%;
@@ -541,6 +613,68 @@ margin-top: 50px;
  }
 
 
+/* ************************************************* */
+
+@media screen and (max-width : 445px){
+    .titleSlide{
+        border: 1px hidden blue;
+        width: 100%;
+        right: 0
+    }
+
+    .titleSlide h1{
+        font-size: 3.3em;
+        font-weight: 800;
+        color: #2C216F;
+        overflow: hidden;
+        font-family: 'Montserrat', sans-serif;
+        border : 1px hidden black;
+        text-align: center;
+    }
+    
+    .titleSlide  .occupons {
+        border: 1px hidden red;
+        font-size: 1.03em;
+        text-align: center;
+     
+    }
+    .titleSlide h3{
+        font-size: 2.3em;
+        font-weight: 600;
+    text-align: center;
+    }
+    
+     .titleSlide h2{
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+
+
+.slideImage img{
+opacity: 0.5;
+}
+}
+
+
+@media screen and (max-width : 427px){
+    .smallImg{
+   display: none;
+    }
+
+    .textFiled  {
+  
+        margin-top : 40px;
+    }
+
+
+
+
+}
+
+
+
+
  @media screen and (max-width : 390px) {
     .controllButton{
         display: none;
@@ -566,3 +700,12 @@ margin-top: 50px;
 }
 
 
+
+@media screen and (max-width: 332px){
+    .titleSlide  .occupons {
+   
+        font-size: 0.8em;
+   
+     
+    }
+}

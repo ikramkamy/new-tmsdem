@@ -13,6 +13,7 @@
 display: flex;
 align-items: center;
 flex-direction: column;
+margin-top: 30px;
 }
 
 .presentation h1{
@@ -63,7 +64,7 @@ flex-direction: column;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 50px;
 }
 
@@ -72,6 +73,7 @@ flex-direction: column;
     border: 1px hidden black;
     height: 500px;
     width: 650px;
+    margin: 5px;
 }
 
 
@@ -98,6 +100,8 @@ flex-direction: column;
     border: 1px hidden white;
     width: 95%;
     font-size: 2.6em;
+    overflow: hidden;
+    text-align: center;
 }
 
 .titl{
@@ -140,6 +144,8 @@ flex-direction: column;
     font-weight: 600;
     border: 1px hidden black;
     width: 100%;
+    text-align: center;
+overflow: hidden;
 }
 
 .formContactt h2{
@@ -148,6 +154,8 @@ flex-direction: column;
     border: 1px hidden black;
     width: 100%;
     color: #2C216F;
+    text-align: center;
+    overflow: hidden;
 }
 
 
@@ -215,8 +223,11 @@ flex-direction: column;
 
 .messageLabel{
     height: 300px; 
+    overflow: hidden;
 }
-.fieldInputContent textarea {
+
+
+.fieldInputContent.textFieldContent textarea {
     width: 700px;
     height: 300px;
     border-radius: 30px;
@@ -282,25 +293,29 @@ flex-direction: column;
 @media screen and (max-width : 870px) {
     .fieldContent{
         flex-direction: column;
-       align-items: center;
-justify-content: center;
+       align-items:flex-start;
+justify-content: flex-start;
+
 
     }
     .fieldInputContent{
         align-items: center;
         justify-content: flex-end;
         width: 95%;
+        margin-left: 15px;
     }
 
     .fieldLabelContent label {
         text-align: left;
+      
+     margin-left: 15px;
     }
 
     .sendCotent{
         width: 100%;
     }
     .fieldInputContent form {
-        border: 1px solid black;
+        border: 1px hidden black;
         width: 100%;
         display: flex;justify-content: flex-end;
     }

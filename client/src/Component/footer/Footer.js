@@ -21,19 +21,19 @@ export default function Footer() {
 
                 <div className="footernumber">
                     <div className="footerIcones"> <img src={Phone} className="phone" /> </div>
-                    <div className="addressText"> +33 1 41 77 11 32</div>
+                    <div className="addressText telTextFooter"> +33 1 41 77 11 32</div>
                 </div>
 
 
                 <div className="footeremail">
                     <div className="footerIcones"> <i class="fas fa-envelope"></i> </div>
-                    <div className="addressText"> contact@tms-dem.com </div>
+                    <div className="addressText contacttextFooter"> contact@tms-dem.com </div>
                 </div>
 
 
                 <div className="footerclientservice">
                     <div className="footerIcones"> <img src={SAV} className="sav" /> </div>
-                    <div className="addressText"> Service client 7j/7</div>
+                    <div className="addressText clientSAVFooter"> Service client 7j/7</div>
                 </div>
 
             </div>

@@ -12,7 +12,7 @@ export default function Service() {
                <div className="pictureTmsDem">
                <img src={Serviceimg} />
              
-             <div className="textSlide">  <h1> Vos affaires chez vous en toute sécurité <section> sans aucun risque de casse ou d'oubli</section></h1></div>
+             <div className="textSlide">  <h1> Vos affaires chez vous en toute sécurité <section className="sectionTextSlideTitle"> sans aucun risque de casse ou d'oubli</section></h1></div>
                </div>
                
             }
@@ -28,8 +28,8 @@ export default function Service() {
                 <div className="servceDetailsServices">
 
                     <div className="serviceItem">
-                        <h3> Offre Soto</h3>
-                        <div className="paraserviceItem"> <p>
+                        <h3 className="offreSotoServiceItem"> Offre Soto</h3>
+                        <div className="paraserviceItem offresotoPara"> <p>
                             Vous voulez déménager
                             sans vous  préoccuper
                             du process ? </p></div>
@@ -57,7 +57,7 @@ export default function Service() {
                             ou d’un camion pour
                             transporter vos affaires ?  </p></div>
 
-                        <div className="buttoncontainer stock"> <button> Je stock <section>chez vous </section></button></div>
+                        <div className="buttoncontainer stock"> <button> Je stock <section className="sectionTitleStockService">chez vous </section></button></div>
                     </div>
                 </div>
             </div>
