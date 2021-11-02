@@ -1,0 +1,403 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+
+.presentation{
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+.presentation h1{
+    font-weight: 600;
+    font-size: 4em;
+    color: #2C216F;
+}
+
+
+.presentationContainer {
+    border: 1px hidden black;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.presentationText{
+    border: 1px hidden red;
+    height: auto;
+    width: 80%;
+    border-bottom: 3px solid #2C216F;
+   
+}
+
+.presentationText p{
+    font-size: 1.7em;
+    margin-top: 20px;
+    line-height: 1.6;
+    color : #2C216F;
+}
+
+
+.para{
+    margin-bottom: 50px;
+}
+
+
+
+/* *********** contact container **************** */
+
+.contactContainer{
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+
+.contactContent{
+    border: 1px hidden black;
+    height: 500px;
+    width: 650px;
+}
+
+
+.contactContent img {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.information {
+    background-color: #ED1C24;
+    display: flex;
+    align-items: center;
+    height: 500px;
+    flex-direction: column;
+}
+
+
+.information h2{
+    color: white;
+    font-weight: 600;
+    font-size: 2em;
+    border: 1px hidden white;
+    width: 95%;
+    font-size: 2.6em;
+}
+
+.titl{
+    margin-top: 10px;
+}
+
+.contactText {
+    border: 1px hidden black;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.contactText p{
+    font-size: 2em;
+   color: white;
+   line-height: 1.3;
+}
+
+
+
+
+/*  Form  */
+
+
+.formContactt{
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+
+.formContactt h1{
+    font-size: 8em;
+    font-weight: 600;
+    border: 1px hidden black;
+    width: 100%;
+}
+
+.formContactt h2{
+    font-size: 4.25em;
+    font-weight: 600;
+    border: 1px hidden black;
+    width: 100%;
+    color: #2C216F;
+}
+
+
+.formContactt h1 + h2{
+ margin-top: -20px;
+}
+
+.formContactContainer{
+    border: 1px hidden red;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+
+.fieldContent{
+    border: 1px hidden orange;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.fieldLabelContent{
+    border: 1px hidden black;
+    height: auto;
+    width: 300px;
+}
+
+.fieldLabelContent label {
+    font-size: 2em;
+    text-align: left;
+    font-weight: 600;
+    border: 1px hidden black;
+}
+
+
+
+.fieldInputContent{
+    border: 1px hidden orange;
+    height: auto;
+    width: 780px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+
+.fieldInputContent input { 
+    border: 1px hidden black;
+    height: 50px;
+    width: 700px;
+    border-radius: 30px;
+    background-color: #D2D0E0;
+    
+} 
+
+.messageLabel{
+    height: 300px; 
+}
+.fieldInputContent textarea {
+    width: 700px;
+    height: 300px;
+    border-radius: 30px;
+    background-color:#D2D0E0 ;
+    border: none;
+}
+
+
+.sendButton{
+    border: 1px hidden black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+.sendCotent{
+    border: 1px hidden blue;
+    height: 100%;
+    width: 900px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sendButton button {
+    border: 1px hidden black;
+    height: 50px;
+    width: 130px;
+    font-size: 1.45em;
+    border-radius: 50px;
+    background-color: #ED1C24;
+    color: white;
+    font-weight: 600;
+}
+
+
+
+/*  Responsive */
+@media screen and (max-width : 1300px) {
+    .contactContainer{
+        flex-direction: column;
+    }
+    .contactContent{
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1281px) {
+    .contactContent{
+        height : auto;
+    }
+    .contactImg{
+        height: 500px;
+    }
+  
+}
+
+
+
+@media screen and (max-width : 870px) {
+    .fieldContent{
+        flex-direction: column;
+       align-items: center;
+justify-content: center;
+
+    }
+    .fieldInputContent{
+        align-items: center;
+        justify-content: flex-end;
+        width: 95%;
+    }
+
+    .fieldLabelContent label {
+        text-align: left;
+    }
+
+    .sendCotent{
+        width: 100%;
+    }
+    .fieldInputContent form {
+        border: 1px solid black;
+        width: 100%;
+        display: flex;justify-content: flex-end;
+    }
+    
+    .textFieldContent{
+   margin-top: -220px;
+    }
+
+}
+
+@media screen and (max-width : 654px) {
+    .contactContent{
+        width: 95%;
+    }
+
+ 
+}
+
+
+
+@media screen and (max-width: 603px) {
+    
+    .presentation h1{
+      width: 100%;
+    }
+}
+
+
+
+
+
+@media screen and (max-width : 520px) {
+    .contactContent img {
+        height: 400px;
+    }
+    .information{
+        margin-top: -50px;
+    }
+
+    .formContactt h1{
+        font-size: 6em;
+    }
+    
+    .formContactt h2{
+        font-size: 3.25em;
+    }
+}
+
+
+
+@media screen and (max-width : 450px) {
+    .contactContent img {
+        height: 350px;
+    }
+
+    .information{
+        margin-top: -80px;
+    }
+}
+
+
+@media screen and (max-width : 392px) {
+    .contactContent img {
+        height: 310px;
+    }
+    .contactContent{
+        width: 97%;
+    }
+    .information{
+        margin-top: -120px;
+    }
+
+}
+
+
+
+@media screen and (max-width : 386px){
+    .formContactt h1{
+        font-size: 4.5em;
+    }
+    
+    .formContactt h2{
+        font-size: 1.65em;
+    }
+}
+
+@media screen and (max-width : 365px) {
+    .presentation .tmsdem{
+        font-size: 3em;
+      }
+      .presentationText{
+       
+        width: 90%;
+    }
+
+
+    .presentationText p {
+        font-size: 1.5em;
+    }
+}

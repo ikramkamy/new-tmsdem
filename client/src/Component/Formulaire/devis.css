@@ -1,0 +1,188 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+  
+    font-weight: 500;
+    font-size: 15px;
+    }
+
+
+.devis{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#414042 ;
+}
+.formule{
+    width: 100%;
+    height: fit-content;
+    
+    box-shadow: lightgrey;
+    display: flex;
+    align-items: center;
+    background-color: white;
+   border: 1px hidden red;
+}
+.marg-right {
+    width: 20%;
+    height: 60vh;
+    background-color: white;
+    
+    border-radius: 20px 20px 20px 20px; 
+    
+}
+.marg-left {
+    width: 20%;
+    height: 60vh;
+   background-color: white;
+
+}
+.form{
+    width: 60%;
+  border: 1px solid lightgray;
+  border-radius: 20px 20px 20px 20px; 
+  padding: 20px;
+  color: #2c216f;
+  color:#ed1c24 ;
+  color:#414042 ;
+  font-size: 1.2em; 
+  letter-spacing: 1px; 
+
+}
+.formule label{
+    width: 100%;
+   display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   /* margin-bottom: 20px;*/
+    border-bottom: 1px solid lightgray;
+   font-size: 0.9em;
+   
+}
+.formule input{
+    width: 70%;
+    height: 50px;
+    width: 100px;
+    /*border: 1px hidden blue;*/
+}
+.check-box{
+    display:flex;
+   
+    justify-content: space-between;
+    
+    width: 235px;
+  
+margin-top: 20px;
+    
+}
+.tit-check{
+    border-bottom: 1px solid red ;
+    margin-bottom: 20px;
+}
+.check-box label{
+    width: fit-content;
+    border: 1px hidden yellow;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    
+}
+.check-box input{
+    border: 1px solid #ed1c24;
+    background-color: royalblue;
+}
+.title{
+  
+    width: 100%;
+   
+}
+.continue-wrap{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    background-color: #ed1c24;
+}
+.valid{
+    width: 350px;
+}
+
+.continue-wrap button{
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px hidden red;
+    margin-right: 100px;
+}
+
+.input-style{
+    height: 40px;
+    width: 150px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid black;
+}
+
+.unserline-button{
+    border-bottom: 1px solid red;
+    margin-bottom: 2%;
+}
+.pos{
+    position: fixed;
+    top: 8.5vh;
+    right: -120px;
+    width: 25%;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+}
+.pos button{
+    color: #2c216f;
+    font-size: 1.3em;
+    
+}
+
+.Myborder-top input ,select{
+   
+    width: 150px;
+    height: 40px;
+    border: 1px solid black;
+}
+.valid {
+    color: white;
+    font-weight: 400;
+    font-size: 1.3em;
+   border: 1px solid white;
+   width: 300px;
+   height: 100%;
+   margin-bottom: 50px;
+   cursor: pointer;
+}
+
+.adress{
+    display: flex;
+    justify-content: space-between;
+    border: 1px hidden lightgray;
+}
+.input-ckeck-box{
+    border: 1px hidden red;
+    display: flex;
+
+  
+    width: 250px;
+}
+.dept-wrap{
+    border: 1px hidden lightgray;
+    display: flex;
+}
+
+input,option,select{
+    font-size: 0.8em;
+}

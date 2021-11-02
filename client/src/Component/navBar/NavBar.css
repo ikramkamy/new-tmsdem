@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.Nav {
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navTop{
+    border : 1px hidden black;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(44,33,111,.2);
+}
+
+/*
+.navTop .phonetopNav{
+    margin-top: 5px;
+
+}
+*/
+/*
+.navTop .savImg{
+    margin-top: 4px;
+}*/
+.navTopInfo{
+    border: 1px hidden black;
+    height: 60px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navitemTop{
+    border: 1px hidden black;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.navigation i, .emaill i {
+    color: #414042;
+}
+
+.navigation i{
+    margin-top: 5px;
+}
+
+
+.navitemTop .emaill i {
+    margin-top: 6px;
+    border: 1px solid black;
+}
+
+.navitemTop .emailImg {
+    height: 18px;
+    width: 24px;
+    margin-right: 6px;
+}
+
+.navitemTop .cursor {
+    height: 20px;
+    width: 15px;
+    margin-right: 6px;
+}
+.navTop .savImg{
+    margin-right : 6px;
+}
+/*
+.navitemTop .navitemTop.navTopemailText{
+display: flex;
+justify-content: flex-start;
+}*/
+.navContainer{
+    border: 1px hidden red;
+    height: 90px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.navSmallScreen .item.emailAdress{
+color: #ED1C24;
+color: white;
+}
+
+.navSmallScreen .item.gps{
+    color: #ED1C24;
+    }
+
+    .itemContainerInfo{
+        border: 1px hidden red;
+        width: 100%;
+        height: auto;
+        background-color: #2C216F;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .navSmallScreen .item.emailAdress + .item.gps{
+      margin-top: 5px;
+       color: white;
+        }
+
+.logoContainer{
+    border: 1px hidden black;
+    height: 80px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.navItem {
+    border: 1px hidden black;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.navItem a{
+   
+    font-size: 1.2em;  
+    text-decoration: none;
+    color: black;
+}
+
+.btn-devis{
+    border: 1px hidden black;
+    height: 40px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #ED1C24;
+}
+
+.btn-devis button {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-weight: 600;
+}
+
+
+.fas.fa-bars{
+    z-index: 100;
+    display: none;
+    color: #2C216F;
+    margin-right: 20px;
+}
+
+.navSmallScreen{
+    height: auto;
+    width: 100%;
+    border : 1px solid white;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000000;
+    background-color: white;
+}
+
+
+.navSmallScreen .item {
+
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+
+.navSmallScreen .btn-devis {
+    margin-bottom: 15px;
+}
+
+
+.navitemTop .phonetopNav{
+    margin-right: 6px;
+}
+
+@media screen and (max-width : 1084px) {
+    .navTopInfo{
+        width: 100%;
+    }
+
+    .navTop{
+        height: auto;
+    }
+
+    .navTopInfo{
+        height: 60px;
+    }
+}
+
+@media screen and (max-width : 708px) {
+    .savcontact{
+        display: none;
+    }
+     .navitemTop .savImg{
+         display: none;
+     }
+}
+
+@media screen and (max-width : 514px){
+
+  .navTop  .navitemTop.navTopemailText {
+        display : none;
+    }
+
+    .navTop  .navitemTop.navTopGps{
+        display: none;
+    }
+
+    .navTopInfo{
+justify-content: flex-start;
+    }
+
+ 
+
+    .navTopInfo{
+        height: 60px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width :992px){ 
+   /*
+   
+  
+*/
+.navItem {
+    justify-content: flex-end;
+}
+.navItem .item{
+    display: none;
+}
+
+.navItem .item{
+    display: none;
+}
+    .fas.fa-bars{
+        z-index: 100;
+        display: inline-block;
+        color: #2C216F;
+        margin-right: 20px;
+    }
+
+   
+
+    .btn-devis{
+       font-size: 0.7em;
+       width: 160px;
+    }
+}
+
+
+
+@media screen and (max-width : 494px){
+    .navitemTop div + div {
+        margin: 1px;
+    }
+
+    .fas.fa-bars{
+        margin-right: 2px;
+    }
+
+    .navContainer{
+        justify-content: space-between;
+    }
+}

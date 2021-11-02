@@ -1,0 +1,497 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.serviceContainer{
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.serviceContainer .titleContainer {
+border: 1px hidden black;
+width: 100%;
+text-align: center;
+}
+
+.serviceContainer .titleContainer h1 {
+ font-size: 3.2em;
+    font-weight: 400;
+    color : #2C216F;
+    margin-top: 20px;
+    }
+
+.serviceContainer .pictureTmsDem {
+border: 1px hidden black;
+height: 830px;
+width: 100%;
+margin-top: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.textSlide{
+position: absolute;
+margin: 50%;
+width: 100%;
+border: 1px hidden red;
+height: auto;
+color: white;
+
+}
+
+.textSlide h1{
+    font-size: 3em;
+    font-weight: 600;
+    text-shadow: 13px -7px 20px #000000;
+}
+.serviceContainer .pictureTmsDem  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+ 
+}
+.serviceContainer .pictureTmsDem h2{
+    border: 1px solid black;
+ width: 750px;
+ font-weight: 650;
+ font-size: 2em;
+
+ color : white;
+    }
+
+.servceDetails{
+    border: 1px hidden red;
+    height: auto;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 50px;
+flex-direction: column;
+}
+
+.servceDetails .serviceDetailsTitle{
+border: 1px hidden black;
+height: auto;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+line-height: 1;
+}
+
+.servceDetails .serviceDetailsTitle h1{
+font-weight: 600;
+font-size: 5em;
+color : #2C216F;
+    }
+
+.servceDetails .serviceDetailsTitle h2{
+font-weight: 600;
+font-size: 2.7em;
+}
+
+
+.servceDetails .serviceDetailsTitle h1 + h2{
+    line-height: 20px;
+}
+.servceDetails .servceDetailsServices{
+border: 1px hidden black;
+height: auto;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+margin-top: 70px;
+}
+
+
+.serviceItem{
+    border: 1px hidden black;
+    height: 380px;
+    width: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ED1C24;
+    flex-direction: column;
+}
+
+.serviceItem h3{
+    font-size: 3.2em;
+    color: white;
+}
+.serviceItem .paraserviceItem{
+    margin-top: 30px;
+    border: 1px hidden white;
+}
+
+.serviceItem p{
+    font-size: 1.35em;
+    width: 340px;
+    text-align: left;
+   color: white;
+}
+.serviceItem  .buttoncontainer {
+    background: white;
+    border: none;
+    height: auto;
+    width: 320px;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    border-radius: 50px;
+    color: #2C216F;
+    margin-top: 30px;
+}
+
+.serviceItem  .buttoncontainer.soto, .serviceItem  .buttoncontainer.stock {
+    font-size: 2.3em;
+    line-height: 1;
+}
+
+.serviceItem  .buttoncontainer.stock{
+    font-size: 2em;
+}
+
+.serviceItem  .buttoncontainer.soto button, .buttoncontainer.stock button{
+    line-height: 1.1;
+    text-align: center;
+   width: 100%;
+}
+.buttoncontainer.soto a{
+    text-decoration: none;
+    color: #2C216F;
+    font-size: inherit;
+}
+.serviceItem  .buttoncontainer button{
+ background: transparent;
+ line-height: 1.2;
+ color: #2C216F;
+ margin: 5px;
+ border: none;
+}
+
+
+
+.reasonsContainer{
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.reasonsContainer .reasonsContainerTitle {
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reasonsContainer .numberReasons{
+    border: 1px hidden black;
+    font-size: 19em;
+    font-weight: 700;
+    color: #ED1C24;
+}
+
+.reasonsContainer .rowTitleReasonContainer{
+border: 1px hidden black;
+width: auto;
+height: auto;
+display: flex;
+align-items:center;
+justify-content:center;
+flex-direction: column;
+margin-top: -65px;
+}
+
+.reasonsContainer .rowTitleReasonContainer h1{
+    font-size: 10em;
+    color: #2C216F;
+    width: 100%;
+}
+
+.reasonsContainer .rowTitleReasonContainer h2{
+    font-size: 3.9em;
+ width: 100%;
+}
+
+
+/**/
+.reasonContent{
+    border: 1px hidden black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.reasonContent .reasonItem {
+    height: 320px;
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid #2C216F;
+}
+
+.reasonContent .reasonItem .reasonItemPara{
+border: 1px hidden black;
+width: 100%;
+height: 180px;
+display: flex;
+justify-content: center;
+margin-top: 30px;
+font-family: 'Montserrat', sans-serif;
+margin-top: 30px;
+}
+.reasonContent .reasonItem h1{
+    font-size: 3em;
+   color:  #2C216F;
+}
+
+.reasonContent .reasonItem.troisieme{
+    border: none;
+}
+
+.reasonContent .reasonItem p{
+    font-size: 1.5em;
+    width: 80%;
+    border: 1px hidden black;
+}
+
+
+.actionContainer{
+    border : 1px hidden black;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+
+.actionContainerItem{
+    border-bottom: 1px hidden black;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+ .actionContainerItem.buttonShop{
+    margin-top: 60px;
+    border: 2px solid black;
+    height: 80px;
+    width: 200px;
+    border-radius: 50px;
+  
+}
+
+
+.actionContainerItem h1{
+ color: #2C216F;
+    font-size: 5em;
+}
+
+.actionContainerItem h2{
+font-weight: 600;
+    font-size: 2.4em;
+}
+
+
+.actionContainerItem button {
+    border : 1px hidden black;
+    background: transparent;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+/* RESPONSIVE WEB SITE */
+
+
+
+
+@media screen and (max-width : 1168px) {
+    .reasonContent .reasonItem h1{
+        font-size: 2.2em;
+    }  
+}
+
+
+
+@media screen and (max-width : 1146px) {
+    .servceDetails .servceDetailsServices{
+        flex-direction: column;
+    }
+
+    .servceDetails .servceDetailsServices .serviceItem{
+       margin-top: 30px;
+    }
+}
+
+
+
+@media screen  and (max-width : 871px){
+    .servceDetails .serviceDetailsTitle h1 + h2{
+        line-height: 1.5;
+    }
+
+    .reasonContent{
+        flex-direction: column;
+    }
+
+
+    .reasonContent .reasonItem{
+        border-right: none;
+        border-bottom: 3px solid #2C216F;
+        margin-top: 40px;
+        height: auto;
+        width: 100%;
+    }
+
+    .reasonContent .reasonItem .reasonItemPara{
+        margin-bottom: 25px;
+    }
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 588px) {
+    .reasonsContainer .reasonsContainerTitle {
+        flex-direction: column;
+    }
+    .reasonsContainer .rowTitleReasonContainer h1{
+        font-size: 7em;
+    }
+    .reasonsContainer .rowTitleReasonContainer h2{
+        font-size: 5em;
+    }
+}
+
+
+
+@media screen and (max-width : 569px) {
+    .actionContainerItem h1{
+        color: #2C216F;
+           font-size: 3em;
+       }
+}
+
+
+
+
+
+
+@media screen and (max-width : 447px) {
+    .servceDetails .serviceDetailsTitle h1{
+        font-size: 3em;
+    }
+    .servceDetails .serviceDetailsTitle h2{
+        font-size: 1.5em;
+    }
+}
+
+
+@media screen and (max-width : 426px) {
+ .reasonsContainer .reasonsContainerTitle .rowTitleReasonContainer h1{
+     font-size: 5em;
+ }
+}
+
+
+@media screen and (max-width: 765px) {
+    .reasonsContainer .reasonsContainerTitle {
+        flex-direction: column;
+    }
+ 
+}
+
+
+
+
+
+@media screen and (max-width : 380px) {
+    .serviceItem{
+        width: 310px
+    }
+    .serviceItem .paraserviceItem p{ 
+        font-size: 1.1em;
+        width: 90%;
+        margin: 15px;
+    }
+
+    .serviceItem  .buttoncontainer {
+        background: white;
+        border: none;
+        height: auto;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        font-size: 1.3em;
+        border-radius: 50px;
+        color: #2C216F;
+        margin-top: 30px;
+    }
+    
+    .serviceItem  .buttoncontainer.soto, .serviceItem  .buttoncontainer.stock {
+        font-size: 1.6em;
+        line-height: 1;
+    }
+    
+    .serviceItem  .buttoncontainer.stock{
+        font-size: 1.4em;
+    }
+    
+    .serviceItem  .buttoncontainer.soto button, .buttoncontainer.stock button{
+        line-height: 1.1;
+        text-align: center;
+       width: 100%;
+    }
+
+
+    .serviceContainer .titleContainer h1 {
+        font-size: 2.9em;
+           font-weight: 300;
+           color : #2C216F;
+           }
+}
+
+@media screen and (max-width : 323px) {
+    .servceDetails .serviceDetailsTitle h2{
+        font-weight: 600;
+        font-size: 1.8em;
+        }
+}
+
+

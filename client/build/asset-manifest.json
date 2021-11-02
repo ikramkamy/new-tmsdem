@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.97a832bd.chunk.css",
+    "main.js": "/static/js/main.b02fbac7.chunk.js",
+    "main.js.map": "/static/js/main.b02fbac7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.21616095.js",
+    "runtime-main.js.map": "/static/js/runtime-main.21616095.js.map",
+    "static/css/2.eff7ce31.chunk.css": "/static/css/2.eff7ce31.chunk.css",
+    "static/js/2.2e9c7f73.chunk.js": "/static/js/2.2e9c7f73.chunk.js",
+    "static/js/2.2e9c7f73.chunk.js.map": "/static/js/2.2e9c7f73.chunk.js.map",
+    "static/js/3.4967fb48.chunk.js": "/static/js/3.4967fb48.chunk.js",
+    "static/js/3.4967fb48.chunk.js.map": "/static/js/3.4967fb48.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.eff7ce31.chunk.css.map": "/static/css/2.eff7ce31.chunk.css.map",
+    "static/css/main.97a832bd.chunk.css.map": "/static/css/main.97a832bd.chunk.css.map",
+    "static/js/2.2e9c7f73.chunk.js.LICENSE.txt": "/static/js/2.2e9c7f73.chunk.js.LICENSE.txt",
+    "static/media/contact_Plan de travail 1.5bdf1539.png": "/static/media/contact_Plan de travail 1.5bdf1539.png",
+    "static/media/image1.1ea7475c.png": "/static/media/image1.1ea7475c.png",
+    "static/media/planificationTimeLine.7b6572c8.png": "/static/media/planificationTimeLine.7b6572c8.png",
+    "static/media/servicePicture.8302bfc0.jpeg": "/static/media/servicePicture.8302bfc0.jpeg",
+    "static/media/tmsdemPicture.9218d64c.png": "/static/media/tmsdemPicture.9218d64c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.21616095.js",
+    "static/css/2.eff7ce31.chunk.css",
+    "static/js/2.2e9c7f73.chunk.js",
+    "static/css/main.97a832bd.chunk.css",
+    "static/js/main.b02fbac7.chunk.js"
+  ]
+}

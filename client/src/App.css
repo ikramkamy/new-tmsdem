@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+ 
+ }
+
+.navApp{
+  border: 1px solid black;
+  position: sticky;
+top: 0;
+}
+.choix{
+  border: 1px solid blue;
+  width: 15%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choix a{
+  text-decoration: none;
+ 
+  color: #2c216f;
+  font-size: 1vw;
+  font-weight: 500;
+}
+.icon-choix{
+  color: #2c216f;
+
+  cursor: pointer;
+  margin-bottom: 150px;
+}
+
+
+
+.navv{
+  height: auto;
+  width: 100%;
+  border: 1px hidden black;
+  background: white;
+   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60vh;
+
+}
+
+.check-circl
+{
+  border: 1px solid lightgray;
+  height: 20px;
+  width: 20px;
+  border: 2px solid blue;
+  border-radius: 20px 20px 20px 20px;
+  cursor: pointer;
+  
+}
+.check-circl:hover{
+  background-color: #ed1c24;
+ 
+}
