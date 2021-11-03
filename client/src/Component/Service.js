@@ -3,6 +3,7 @@ import Stylee from './Service.css'
 import Serviceimg from '../images/servicePicture.jpeg';
 import Footer from './footer/Footer';
 import {Link} from 'react-router-dom'
+import MonteMeuble from '../images/monteMeuble.jpeg'
 export default function Service() {
     return (
         <div className="serviceContainer">
@@ -62,7 +63,7 @@ export default function Service() {
                 </div>
             </div>
 
-
+{/*
 
             <div className="reasonsContainer">
 
@@ -102,8 +103,42 @@ export default function Service() {
                             à l’heure convenue </p> </div>
                     </div>
                 </div>
-
+            
             </div>
+*/
+}
+
+<div className="monteMeubleContainer">
+
+<div className="monteMeubleText">
+<h1> Monte-meuble</h1>
+<div className="monteMeubleTextDescription">
+<p>
+
+
+
+À cause du poids ou des  dimensions de certains meubles, nous utilisons un monte meuble qui facilite le transport de ses derniers vers la navette, sans avoir à passer  par l’escalier ni par l’ascenseur.
+
+Notre équipe est hautement qualifiée pour mener l’opération de levage en toute sécurité  afin d’éviter tous risques de chute.
+
+Vous pouvez toutefois louer nos  montes- meubles dans le cas d’un usage personnel.
+
+</p>
+</div>
+</div>
+
+<div className="monteMeubleImg">
+<img src={MonteMeuble} />
+</div>
+
+
+</div>
+
+
+
+
+
+
 
 
 

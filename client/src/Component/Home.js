@@ -90,6 +90,58 @@ export default function Home() {
             </div>
 
 
+
+
+            <div className="reasonsContainer">
+
+<div className="reasonsContainerTitle">
+    <div className="numberReasons">
+        3
+    </div>
+    <div className="rowTitleReasonContainer">
+        <h1> raisons</h1>
+        <h2> pour nous choisir</h2>
+    </div>
+</div>
+
+
+<div className="reasonContent">
+
+    <div className="reasonItem">
+        <h1> Authenticité </h1>
+        <div className="reasonItemPara"> <p> Nous ne sous traitons pas,
+            nous possédons notre propre équipe
+            de déméngeurs  </p> </div>
+    </div>
+
+    <div className="reasonItem">
+        <h1> Responsabilité </h1>
+        <div className="reasonItemPara"> <p>
+            Vos affaires arriverons chez vous, en toute
+            sécurité et sans aucun oubli. </p> </div>
+    </div>
+
+    <div className="reasonItem troisieme">
+        <h1> Ponctualité</h1>
+        <div className="reasonItemPara"> <p>
+            Nous nous
+            présenterons le jour
+            J chez vous
+            à l’heure convenue </p> </div>
+    </div>
+</div>
+
+</div>
+        
+
+
+
+
+
+
+
+
+
             <div className="planificationStep">
                 <div className="planificationTitle">
 

@@ -355,6 +355,56 @@ color: #2C216F;
 
 
 
+
+
+
+.reasonContent .reasonItem {
+    height: 320px;
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid #2C216F;
+}
+
+.reasonContent .reasonItem .reasonItemPara{
+border: 1px hidden black;
+width: 100%;
+height: 180px;
+display: flex;
+justify-content: center;
+margin-top: 30px;
+font-family: 'Montserrat', sans-serif;
+margin-top: 30px;
+}
+.reasonContent .reasonItem h1{
+    font-size: 3em;
+   color:  #2C216F;
+   border: 1px hidden black;
+   text-align: center;
+}
+
+.reasonContent .reasonItem.troisieme{
+    border: none;
+}
+
+.reasonContent .reasonItem p{
+    font-size: 1.5em;
+    width: 80%;
+    border: 1px hidden black;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .testimonial{
     border: 1px hidden black;
     height: auto;
@@ -425,6 +475,7 @@ width: 30px;
 }
 
 
+
 .testimonialName{
     border: 1px hidden black;
     height: 50px;
@@ -455,6 +506,7 @@ width: 30px;
 .testimonial h1{
     font-size: 3.5em;
     font-weight: 800;
+    text-align: center;
 }
 
 .testimonialName .clientName {
@@ -533,6 +585,12 @@ width: 30px;
     }
 }
 
+@media screen and (max-width : 1168px) {
+    .reasonContent .reasonItem h1{
+        font-size: 2.2em;
+    }  
+}
+
 
 @media screen and (max-width : 987px){
   
@@ -550,6 +608,35 @@ width: 30px;
     left: 10px;
 }
 }
+
+
+
+@media screen  and (max-width : 871px){
+
+    .reasonContent{
+        flex-direction: column;
+    }
+
+
+    .reasonContent .reasonItem{
+        border-right: none;
+        border-bottom: 3px solid #2C216F;
+        margin-top: 40px;
+        height: auto;
+        width: 100%;
+    }
+
+    .reasonContent .reasonItem .reasonItemPara{
+        margin-bottom: 25px;
+    }
+}
+
+
+
+
+
+
+
 
 @media screen and (max-width : 762px) {
     .planificationTitle {
@@ -573,6 +660,15 @@ width: 30px;
         width: 100%;
     }
 }
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width : 510px){
 
@@ -600,6 +696,30 @@ margin-top: 50px;
 }
 
 
+
+
+@media screen and (max-width: 588px) {
+    .reasonsContainer .reasonsContainerTitle {
+        flex-direction: column;
+    }
+    .reasonsContainer .rowTitleReasonContainer h1{
+        font-size: 7em;
+        text-align: center;
+    }
+    .reasonsContainer .rowTitleReasonContainer h2{
+        font-size: 5em;
+        text-align: center;
+    }
+.reasonsContainer .reasonItemPara{
+    text-align: center;
+}
+
+
+}
+
+
+
+
  @media screen and (max-width : 446px) {
     .planificationTitle h1{
         font-size: 4em;
@@ -611,6 +731,24 @@ margin-top: 50px;
        
     }
  }
+
+
+
+ @media screen and (max-width : 426px) {
+    .reasonsContainer .reasonsContainerTitle .rowTitleReasonContainer h1{
+        font-size: 5em;
+    }
+   }
+   
+   
+   @media screen and (max-width: 765px) {
+       .reasonsContainer .reasonsContainerTitle {
+           flex-direction: column;
+       }
+    
+   }
+
+
 
 
 /* ************************************************* */
@@ -671,6 +809,11 @@ opacity: 0.5;
 
 
 }
+
+
+
+
+
 
 
 

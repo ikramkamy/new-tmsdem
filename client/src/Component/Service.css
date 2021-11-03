@@ -314,6 +314,73 @@ margin-top: 30px;
     border: 1px hidden black;
 }
 
+/**/
+
+/**/
+
+.monteMeubleContainer {
+    border: 1px hidden black;
+    height: auto;
+    width: 100%;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+ .monteMeubleContainer .monteMeubleText, .monteMeubleContainer .monteMeubleImg {
+    border: 1px hidden black;
+    height: 600px;
+    width: 600px;
+    margin: 10px;
+ }
+
+
+
+ .monteMeubleContainer .monteMeubleText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ }
+
+ .monteMeubleContainer .monteMeubleText h1{
+     text-align: left;
+     width: 100%;
+     font-weight: 00;
+     font-size: 3.5em;
+     color: #2C216F;
+     margin-left: 18px;
+ }
+
+
+ .monteMeubleContainer .monteMeubleText .monteMeubleTextDescription {
+     border: 1px hidden black;
+     height: auto;
+     width: 100%;
+     margin: 15px;
+ }
+
+ .monteMeubleContainer .monteMeubleText .monteMeubleTextDescription p {
+    margin: 15px;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.2em;
+ }
+ .monteMeubleContainer .monteMeubleImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .monteMeubleContainer .monteMeubleImg img{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+/**/
 
 .actionContainer{
     border : 1px hidden black;
@@ -406,6 +473,11 @@ font-weight: 600;
     .servceDetails .servceDetailsServices .serviceItem{
        margin-top: 30px;
     }
+
+
+    .monteMeubleContainer {
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width : 882px) {
@@ -457,7 +529,12 @@ font-weight: 600;
 
 }
 
-
+/**************************************************************************************************************/
+@media screen  and (max-width: 600px) {
+    .monteMeubleContainer .monteMeubleText, .monteMeubleContainer .monteMeubleImg{
+        width: 100%;
+    }
+}
 
 
 
@@ -520,7 +597,11 @@ font-weight: 600;
 }
 
 
-
+@media screen  and (max-width: 396px) {
+    .monteMeubleContainer .monteMeubleText, .monteMeubleContainer .monteMeubleImg{
+        height: auto;
+    }
+}
 
 
 @media screen and (max-width : 380px) {
