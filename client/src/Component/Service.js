@@ -121,7 +121,7 @@ export default function Service() {
 
 Notre équipe est hautement qualifiée pour mener l’opération de levage en toute sécurité  afin d’éviter tous risques de chute.
 
-Vous pouvez toutefois louer nos  montes- meubles dans le cas d’un usage personnel.
+Vous pouvez toutefois louer nos  monte-meubles dans le cas d’un usage personnel.
 
 </p>
 </div>
