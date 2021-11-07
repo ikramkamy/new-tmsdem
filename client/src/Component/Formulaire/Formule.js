@@ -7,9 +7,14 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import Carton from '../Carton';
 import  {MDBInput}  from 'mdbreact';
 import Ecommerce from '../Ecommerce';
+import useForceUpdate from 'use-force-update';
+import { jsPDF } from "jspdf";
+import Pdfinvent from '../Pdfinventaire';
+import './pdf.css';
+import NavFomule from '../navFomule';
 //simport ReactTooltip from 'react-tooltip';
-
 const Formulefinale=()=>{
+const forceUpdate = useForceUpdate();
 const[showecommerce,setShowecommerce]=useState(false);
 const[box1,setBox1]=useState(false);
 const[box2,setBox2]=useState(true);
@@ -18,13 +23,11 @@ const[box2,setBox2]=useState(true);
 const [volum,setVolum]=useState(false);
 const showVolum=()=>{
     setVolum(!volum)
-
 }
 const[volmanu,setVolmanu]=useState(true);
 const[volcalc,setVolcalc]=useState(false);
 const [vol1,setVol1]=useState();
 const [vol2,setVol2]=useState();
-
 useEffect(()=>{
     if(volmanu==true){
         setVol2(0)
@@ -52,13 +55,14 @@ const handeVolcalc=()=>{
     setVolmanu(false);
 }
 /**************************************************calcult de cubage******************************************** */
-
 const[cubage,setCubage]=useState(0);
 const handelCubage=(data)=>{
-    setCubage(data);
+      setCubage(data);
+      console.log("cubage",cubage)
     //console.log("we are getting data from chlidern",data)
     //console.log("prix de cubage",cubage*10)
-    setVarchange(varchange+1); 
+      setVarchange(varchange+1); 
+      forceUpdate()
 }
 /******************************************Autorisation de stationnement******************************************* */
 const [autoO,setAutoO]=useState(false);
@@ -75,7 +79,6 @@ const [rmtgdmtg,setRmtgdmtg]=useState(false);
 const [dementaged,setDementaged]=useState(false);
 const [remontager,setRemontager]=useState(false)
 const [tarifRMNTG,setTarifRMNTG]=useState(1);
-
 const handelRMNT1=()=>{
     setRmntgN(true); 
     setRmtgdmtg(false);  
@@ -129,7 +132,6 @@ setComplique(event.target.value);
 setVarchange(varchange+1);
 }
 /****************************************************************************************** */
-
 const handelecommerce=()=>{
     setShowecommerce(!showecommerce)    
 }
@@ -143,7 +145,7 @@ const handelCheck2=()=>{
     setBox1(false)
     setShowecommerce(false) 
 }
-    /*********************************************MY CONSTANTS****************************************************************** */
+/*********************************************MY CONSTANTS****************************************************************** */
 const [lieux,setLieux]=useState([{label:"Ville",value:"Ville"}, {label:"Bordeaux",value:"Bordeaux"},
     {label:"Paris",value:"Paris"}]);
 const [etage,setEtage]=useState([{label:"RDC",value:"0"},{label:"1",value:"1"},{label:"2",value:"2"},{label:"3",value:"3"},{label:"4",value:"4"},
@@ -274,23 +276,80 @@ const handelfrigo=()=>{
 }
 
 /***************************************************************************************************/
-
-
-
-
 /*****************************************************Calcul pri carton**************************************** */
 const [pricart,setPricart]=useState(0);
 const sendPrixcarton=(data)=>{
     setPricart(data);
     setVarchange(varchange+1);
 }
+/***********************************PDF GENERATION**********************************/
+const [showpdf,setShowpdf]=useState(false);
+const generatepdf=()=>{
+    var doc= new jsPDF('portrait','pt', 'a4');
+    /*
+    doc.text(60,60,'Entreprise: Amogela');
+    doc.text(60,40,'Télèphone:+2130.......');
+    doc.text(60,20,'Email:email@gmail.com');
+    doc.text(60,10,"liste");
+    */
+    doc.html(document.querySelector("#all"),{callback: function(pdf){pdf.save("inventaire.pdf")}})
+    
+    }
+
+    /***********************date get**************** */
+    const [date,setDate]=useState("")
+    const getDate=(event)=>{
+        setDate(event.target.value)
+      
+    }
+ 
 return(
 
 <div className="principal-formulaire">
 
+  {showpdf && (
+    <div className="pdf-stylig"> 
+    <div  className="wrap-pdf-stylig" id="all">
+    <Pdfinvent  generatepdf={generatepdf} className="wrap-pdf" >
+   <div className="header-inventaier" onClick={()=>setShowpdf(false)}>&times;</div>
+   <h1 className="principale-titles invent-title">Votre demande</h1>
+
+<div className="inevnt-item">
+    <div>La date de démènagement :</div>
+    <div>{date}</div>
+    </div>
+<div className="inevnt-item">
+    <div>l'adresse de départ :</div>
+    <div>.....</div>
+    </div>
+<div className="inevnt-item">
+    <div>l'adresse de l'arrivée:</div>
+    <div>.....</div>
+    </div>
+<div className="inevnt-item">
+    <div>Le volume de total  calculé:</div>
+    <div>{cubage}</div>
+    </div>
+<div className="inevnt-item"><div>Le volume de total estimé:</div><div>{vol1}</div></div>
+<div className="inevnt-item"><div>La liste d'achat: </div></div>
+<div className="inevnt-item" style={{marginBottom:"50px"}}>
+    <div>Le montant total:</div>
+    <div>{total}</div>
+    </div>
+  
+    </Pdfinvent>
+    </div>
+    <div  className=" btn-formule btn-download"
+     onClick={generatepdf}>Télècharger</div> 
+    </div>)} 
+  
+<div style={{width:"80%"}}>
 <div className="text-calcul">
 <h1>Votre projet de déménagement</h1>
-<div className="text-fomulaire">Choisissez maintenant vos options. Votre devis se recalcule automatiquement.</div>
+<div className="text-fomulaire">
+Choisissez maintenant vos options. 
+Votre devis se recalcule automatiquement.</div>
+</div>
 </div>
 <div className="les-champs-de-calcul">
 <div className="wrap-formulaire">
@@ -298,134 +357,163 @@ return(
 <div className="calcul-bloc">
 
 
-<div className="calcul-bloc-item">
+<div className="calcul-bloc-item" id="date">
 <h1 className="text-conatiner">Date</h1>
 <div className="date-wrap" >
 
-<input type="date" className="date-input-style"/>
+<input type="date" className="date-input-style" value={date} onChange={getDate}/>
 </div>
 </div>
  
 
-<div className="calcul-bloc-item">
+<div className="calcul-bloc-item" id="date">
     <div className="inter-calcul-item">
     <h1 className="principale-titles">Départ</h1>
 <input type="text"  className="address-input"/>
-   <select className="select-ville">
-   {lieux.map((option) => (
-              <option  value={option.value}>{option.label}</option>
-            ))}
-   </select>
+  
     </div>
 <div className="inter-calcul-item">
 <label className=" Myborder-top">
-<p className="title">ETAGE </p>
+<div className="title">ETAGE </div>
 <select  value={numetage}  name='numetage' onChange={handelChangeall}>
    {etage.map((option) => (
               <option  value={option.value}>{option.label}</option>
             ))}
    </select>
+   <div className="title">
+       <Link to="/depart"  className="tip-distance1">
+       <div className="">
+    </div>
+       </Link>
+   </div >
 </label>
 <label className=" Myborder-top">
-<p className="title">ASCENSEUR</p>
+<div className="title">ASCENSEUR</div>
 <select value={valassenseur} name="valassenseur" onChange={handelChangeassens}>
    {assenseur.map((option) => (
               <option  value={option.value}>{option.label}</option>
             ))}
    </select>
+   <div className="title">
+       <Link to="/depart"  className="tip-distance1">
+       <div className="">
+    </div>
+       </Link>
+   </div>
 </label>
 <label className=" Myborder-top">
-<p className="title" >DISTANCE DE PORTAGE</p>
+<div className="title" >DISTANCE</div>
 
 <select value={valdistance} name="valdistance"  onChange={handelvaldistance} >
    {distance.map((option) => (
               <option  value={option.value}>{option.label}</option>
             ))}
    </select>
-   <p className="title " >
+   <div className="title  flexstart" >
     <Link to="/depart" className="tip-distance1">Plus d'information
    <div className="tooltip-styling">
     Nombre de métres au RCD entre votre hall d'immeuble et l'emplacement de stationnement le plus proche pour le camion(accès facile, fond de cours,jardin à traverser,immeuble de résidence etc...
         </div>
    </Link>
-   </p>
+   </div>
 </label>
 <label className=" Myborder-top">
-<p className="title">MONTE-MEUBLES</p>
+<div className="title">MONTE-MEUBLES</div>
 <select   type="number"  placeholder="Monte-meuble"  name="mnt" value={mnt} onChange={handelMnt}>
 <option label="Non" value="0">Non</option>
 <option label=" oui (7h)" value="450">Oui pour 7h</option>
-<option label=" oui (1/2j)"  value="250"   >Oui pour une demie journée</option>
+<option label=" oui (1/2j)"  value="250">Oui pour une demie journée</option>
 </select>
-<p className="title"><Link className="tip-mont-meuble1">Plus d'information
+<div className="title flexstart">
+<Link className="tip-mont-meuble1">
+Plus d'information
 <div className="tooltip-styling-monte-meuble1">
-     Lors du démenagement, il arrive parfois que l'absence d'ascensseur ou l'étroitesse de la cage d'escalier oblige à passer le mobilier par la fenetre avec un appreil de levage appelé Monte-meuble.
+Lors du démenagement, il arrive parfois que l'absence
+d'ascensseur ou l'étroitesse de la cage d'escalier oblige 
+à passer le mobilier par la fenetre avec un appreil 
+de levage appelé Monte-meuble.
         </div>
         </Link>
-</p>
+</div>
 </label>
 
 
 
 
 </div>
-<div className="inter-calcul-item big-titles"><span className="tit-big-first">Avez-vous besoin d'une </span><span className="tit-big-second">autorisation de stationnement ?</span></div>
-<div className="inter-calcul-item">
-<p className="title"><Link className="tip-auton-01">Plus d'information
+<div className="inter-calcul-item big-titles mrgntop0px">
+    <span className="tit-big-second" style={{textDecoration:"none",marginRight:"10px"}}>
+    Avez-vous besoin d'une 
+    </span>
+    <span className="tit-big-second">autorisation de stationnement ?</span>
+    </div>
 
+<div className="title"  style={{alignItems:"flex-start",marginLeft:"5.5%"}}>
+<Link className="tip-auton-01">Plus d'information
 <div className="tooltip-styling-auton1">
-   Si vous habitez en ville il est possible que le camion se gare dans la rue.Selon votre commune une autorisation de stationnement est peut être nécessaire.
+   Si vous habitez en ville il est possible 
+   que le camion se gare dans la rue.Selon votre commune 
+   une autorisation de stationnement est peut être nécessaire.
         </div>
 
 </Link>
-</p></div>
+</div>
+
 
 
 <div className="inter-calcul-item  check-yes-no">
- 
+<div className="wrap-yes-no">
 <MDBInput label="oui" type="checkbox" id="autoo" checked={autoO} onChange={handelauto}/>
 <MDBInput label="Non" type="checkbox" id="auton" checked={!autoO} onChange={handelauto}/>  
- 
+</div> 
     </div> 
 </div>
 
 
 
 <div className="calcul-bloc-item">
-    <div className="inter-calcul-item">
+<div className="inter-calcul-item">
     <h1 className="principale-titles">Arrivé</h1>
 <input type="text"  className="address-input"/>
-   <select className="select-ville" >
-   {lieux.map((option) => (
-              <option  value={option.value}>{option.label}</option>
-            ))}
-   </select>
-    </div>
-    <div className="inter-calcul-item">
+   
+</div>
+<div className="inter-calcul-item">
 <label className=" Myborder-top">
-<p className="title">ETAGE </p>
+<div className="title">ETAGE </div>
 <select value={numetage2}  name='numetage2' onChange={handelChangeall2}>
    {etage.map((option) => (
               <option  value={option.value}>{option.label}</option>
             ))}
    </select>
+   <div className="title flexstart">
+       <Link to="/depart"  className="tip-distance1">
+       <div className="">
+    </div>
+       </Link>
+   </div>
 </label>
 <label className=" Myborder-top">
-<p className="title">ASCENSEUR</p>
+<div className="title">ASCENSEUR</div>
 <select value={valassenseur2} name="valassenseur2" onChange={handelChangeassens2}>
    {assenseur.map((option) => (
               <option  value={option.value}>{option.label}</option>
             ))}
    </select>
+   <div className="title .flexstart">
+       <Link to="/depart"  className="tip-distance1">
+       <div className="">
+    </div>
+       </Link>
+   </div>
 </label>
 <label className=" Myborder-top">
-<p className="title">DISTANCE DE PORTAGE</p>
+<div className="title">DISTANCE</div>
 <select value={valdistance2} name="valdistance2" onChange={handelvaldistance2} >
    {distance.map((option) => (
               <option  value={option.value}>{option.label}</option>
             ))}
    </select>
-   <p className="title">
+   <div className="title flexstart">
        <Link to="/depart"  className="tip-distance1">Plus d'information
        <div className="tooltip-styling">
     Nombre de métres au RCD entre votre hall d'immeuble et l'emplacement de stationnement le plus proche pour le camion(accès facile, fond de cours,jardin à traverser,immeuble de résidence etc...
@@ -433,67 +521,83 @@ return(
        
        </Link>
    
-   </p>
+   </div>
 </label>
 <label className=" Myborder-top">
-<p className="title">MONTE-MEUBLES</p>
+<div className="title">MONTE-MEUBLES</div>
 <select  type="number"  placeholder="Ascenseur"  name="mnt2" value={mnt2} onChange={handelMnt2} >
 <option label="Non" value="0">Non</option>
 <option label=" oui (7h)" value="450">Oui pour 7h</option>
 <option label=" oui (1/2j)"  value="250"   >Oui pour une demie journée</option>
 </select>
-<p className="title"><Link to="/depart" className="tip-mont-meuble1">Plus d'information
+<div className="title flexstart">
+    
+    <Link to="/depart" className="tip-mont-meuble1">Plus d'information
 <div className="tooltip-styling-monte-meuble1">
      Lors du démenagement, il arrive parfois que l'absence d'ascensseur ou l'étroitesse de la cage d'escalier oblige à passer le mobilier par la fenetre avec un appreil de levage appelé Monte-meuble.
         </div>
         </Link>
-</p>
+</div>
 </label>
 
 
 
 
 </div>
-<div className="inter-calcul-item big-titles"><span className="tit-big-first">Avez-vous besoin d'une</span><span className="tit-big-second">autorisation de stationnement ?</span></div>
-<div className="inter-calcul-item">
-    
-<p className="title"><Link className="tip-auton-01">Plus d'information
+<div className="inter-calcul-item big-titles">
+<span className="tit-big-second" 
+style={{textDecoration:"none",marginRight:"10px"}}>
+    Avez-vous besoin d'une
+    </span>
+<span className="tit-big-second">autorisation de stationnement ?</span></div>
 
+<div className="title flexstart"   style={{alignItems:"flex-start",marginLeft:"5.5%"}}>
+    <Link className="tip-auton-01">
+        Plus d'information
 <div className="tooltip-styling-auton1">
-   Si vous habitez en ville il est possible que le camion se gare dans la rue.Selon votre commune une autorisation de stationnement est peut être nécessaire.
+   Si vous habitez en ville il est possible que le camion 
+   se gare dans la rue.Selon votre commune une autorisation
+   de stationnement est peut être nécessaire.
         </div>
 
 </Link>
-</p></div>
+</div>
+
 
 <div className="inter-calcul-item  check-yes-no">
-    
-<MDBInput label="oui" type="checkbox" id="autoo2" checked={autoO2} onChange={handelauto2}/>
+   <div className="wrap-yes-no mdbinput">
+<MDBInput label="oui " type="checkbox" id="autoo2" checked={autoO2} onChange={handelauto2}/>
 <MDBInput label="Non" type="checkbox" id="auton2" checked={!autoO2} onChange={handelauto2}/>  
- 
+</div> 
     </div> 
 
 </div>
-
-
 <div className="calcul-bloc-item">
+<div className="inter-calcul-item">
+<h1 className="principale-titles">
+Votre volume
+</h1>
+</div>
 
 <div className="inter-calcul-item">
-    <h1 className="principale-titles">Votre volume</h1>
-    </div>
-
-<div className="inter-calcul-item">
-<div className="text-fomulaire">Une bonne estimation du volume est un élément clé pour éviter les mauvaises surprises le jour J.<br/>
-Nos conseillers sont à votre disposition.</div>
+<div className="text-fomulaire">
+Une bonne
+estimation du volume est un élément clé pour éviter les mauvaises surprises le jour J.<br/>
+Nos conseillers sont à votre disposition.
+</div>
 </div>
 <div className="inter-calcul-item ">
   <div className="wrap-volum-items">
   <div className="wrap-volum-items-inter">
-   <div><MDBInput type="checkbox" checked={volmanu}   id="volummanu" onChange={handelVolmanu}  /></div> 
-    <p className="volum-text"> Volume renseigné manuellement</p>
+   <div className="mdbinput">
+<MDBInput type="checkbox" label="Volume renseigné manuellement"
+ checked={volmanu}   id="volummanu" onChange={handelVolmanu} /></div> 
+  
     </div>
-    <div><input className="input-vol" type="number" name="vol1" value={vol1} onChange={handeVolValue}  />
-    <span className="unit-vol">m3</span></div> 
+    <div className="wrap-inout-volume">
+    <input className="input-vol" type="number" name="vol1" value={vol1} onChange={handeVolValue}  />
+    <span className="unit-vol" style={{marginLeft:"5px"}}>m<sup>3</sup></span>
+    </div> 
  
 </div>
 </div>
@@ -501,24 +605,28 @@ Nos conseillers sont à votre disposition.</div>
 <div className="inter-calcul-item ">
   <div className="wrap-volum-items">
   <div className="wrap-volum-items-inter">
-   <div><MDBInput type="checkbox" checked={volcalc}   id="volcalc"  onChange={handeVolcalc}/></div> 
-    <p className="volum-text"> Volume estimé avec notre super calculateur de volume</p>
+   <div className="mdbinput">
+    <MDBInput type="checkbox" 
+    label="Volume estimé avec notre super calculateur de volume" 
+    checked={volcalc}   id="volcalc"  onChange={handeVolcalc}/></div> 
     </div>
     <div>
-    <input className="input-vol" type="number" name="vol2" value={vol2} />
-    <span className="unit-vol">m3</span>
+    <input className="input-vol" type="number" name="vol2" value={cubage} />
+    <span className="unit-vol" style={{marginLeft:"5px"}}>m<sup >3</sup></span>
     </div> 
     
 </div>
 
-<div className="btn-formule"  onClick={showVolum}>calculateur de volume</div>
+<div className="btn-formule" style={{marginLeft:"5px"}} onClick={showVolum}>
+    calculateur de volume
+    </div>
 </div>
 
 
 
 </div>
 
-{volum &&(<Carton showVolum={showVolum}  handelCubage={handelCubage}/>)}
+{volum &&(<Carton showVolum={showVolum}  handelCubage={handelCubage} />)}
 
 
 
@@ -533,70 +641,72 @@ Nos conseillers sont à votre disposition.</div>
    </div>*/}
 
 </div>
-<p className="width90">Possédez-vous des objets lourds ?</p>
+<p className="width90" id="objL">
+    Possédez-vous des objets lourds ?</p>
 <div className="wrap-formulaire">
 <div className="calcul-bloc">
 <div className="calcul-bloc-item">
 <div className="inter-calcul-item  check-yes-no">
-    
-<MDBInput label="oui" type="checkbox"  checked={lourd} onChange={handelLourd} />
-<MDBInput label="Non" type="checkbox"  checked={!lourd} onChange={handelLourd}/>  
- 
-    </div>    
+<div className="wrap-check-yes-no">
+<div className="mdbinput">  
+<MDBInput label="oui" type="checkbox"  id="louro" checked={lourd} onChange={handelLourd} />
+</div>
+<div className="mdbinput">
+<MDBInput label="Non" type="checkbox"  id="louron" checked={!lourd} onChange={handelLourd}/>  
+</div>
+</div>
+</div>    
 
 </div>
 {lourd &&(
-<div className="inter-calcul-item ">
-  <div className="wrap-volum-items">
-  <div className="wrap-volum-items-inter">
-   <div><MDBInput type="checkbox" checked={piono}  id="volummanu" onChange={handelpiano}/></div> 
-    <p className="volum-text">Piano</p>
-    </div>
-    <div>Si vous possédez plus q'un seule piano, ajoutez un commantaire
+<div className="inter-calcul-item  dsplyclmn">
+ <div className="mdbinput"> 
+    <MDBInput type="checkbox" 
+    label="Piano" checked={piono} 
+    id="piano" onChange={handelpiano}/>
+       </div> 
+
+       <div className="mdbinput">
+<MDBInput type="checkbox" checked={frigo}
+label="Frigo Américain" id="frigo"
+ onChange={handelfrigo}/>
     </div> 
- 
-</div>
-</div>)
-}
-{lourd &&(
-<div className="inter-calcul-item ">
-  <div className="wrap-volum-items">
-  <div className="wrap-volum-items-inter">
-   <div><MDBInput type="checkbox" checked={frigo}  id="volummanu" onChange={handelfrigo}  /></div> 
-    <p className="volum-text">Frigo Américain</p>
     </div>
-    <div>Si vous possédez plus q'un seule Frigo Américain, ajoutez un commantaire</div> 
- 
-</div>
-</div>)
-}
-
-
-</div>
+   )
+}</div>
 {/*<div className="calcul-montant"></div>*/}
 </div>
-<p className="width90">Avez-vous besoin d'aide pour le démontage
-et le remontage de<br/> votre mobilier ?</p>
+<p className="width90">
+Avez-vous besoin d'aide pour le démontage
+et le remontage de votre mobilier ?</p>
 <div className="wrap-formulaire">
 <div className="calcul-bloc">
 <div className="calcul-bloc-item">
-<div className="inter-calcul-item ">
-    
+<div className="inter-calcul-item dsplyclmn">
+<div className="">
+<MDBInput label="Aucune aide" type="checkbox" id="rmntgN" checked={rmntgN}  onChange={handelRMNT1}/>
+</div>
 
-<MDBInput label="Aucune aide" type="checkbox"  checked={rmntgN}  onChange={handelRMNT1}/>  
-<MDBInput label="Démontage & remontage" type="checkbox"  checked={rmtgdmtg} onChange={handelRMNT2} />  
-<MDBInput label="Démontage seul" type="checkbox"  checked={dementaged} onChange={handelRMNT3}/> 
-<MDBInput label="Remontage seul" type="checkbox" checked={remontager} onChange={ handelRMNT4}  /> 
+<div className="">
+<MDBInput label="Démontage & remontage" type="checkbox" id="rmtgdmtg" checked={rmtgdmtg} onChange={handelRMNT2} /> 
+</div>
+ 
+<div className="">
+<MDBInput label="Démontage seul" type="checkbox" id="dementaged"  checked={dementaged} onChange={handelRMNT3}/> 
+</div>
+<div className="">
+<MDBInput label="Remontage seul" type="checkbox" id="remontager" checked={remontager} onChange={ handelRMNT4}  /> 
+</div> 
     </div>   
     
     
     
   {showrmntg &&(
-    <div className="inter-calcul-item RMNTG ">
-
+<div className="inter-calcul-item RMNTG ">
 <div className="title-RMNTG">Simple</div> 
 <div className="content-RMNTG">
-<div className="text-RMNTG">Bureau simple, commode de taille moyenne, étagère simple, lit simple, lit bébé, placard (décrochage), table...</div>
+<div className="text-RMNTG">
+Bureau simple, commode de taille moyenne, étagère simple, lit simple, lit bébé, placard (décrochage), table...</div>
 <input type="Number" min="0" className="input-RMNTG" name="simple" value={simple} onChange={handesimple}/>
 </div>
 
@@ -629,39 +739,35 @@ et le remontage de<br/> votre mobilier ?</p>
 
     
 </div>
-{/*<div className="calcul-montant">
-<p>DÉMÉNAGEMENT CLASSIQUE <br/> 695 km · 25 m3</p>
 
-  <div className="total-formulaire"><div>Total:</div>
-  <div>120 €</div>
-  </div> 
 </div>
-*/}
-</div>
-
-
-
-
-<p className="width90">Avez-vous besoin de fournitures pour votre déménagement ?</p>
+<p className="width90">
+Avez-vous besoin de fournitures pour votre déménagement?
+</p>
 <div className="wrap-formulaire">
-<div className="calcul-bloc">
-<div className="calcul-bloc-item">
-<div className="inter-calcul-item check-yes-no">
-    
-<MDBInput label="oui" type="checkbox" id="checkbox1" checked={box1} onChange={handelCheck} />
-<MDBInput label="Non" type="checkbox" id="checkbox2" checked={box2} onChange={handelCheck2} /> 
+<div className="calcul-bloc" >
+<div className="calcul-bloc-item" >
+<div className="inter-calcul-item">
+    <div className="wrap-check-yes-no">
+ <div className=" mdbinput" style={{marginBottom:"30px"}}> 
+<MDBInput label="oui" type="checkbox" id="checkbox1" checked={box1} onChange={handelCheck}/>
+</div>  
+<div  className=" mdbinput" style={{marginBottom:"30px"}}>
+<MDBInput label="Non" type="checkbox" id="checkbox2" checked={box2} onChange={handelCheck2}/>
+</div> 
+</div>
 </div>
     </div>   
     
     
-    {showecommerce && (<Ecommerce  sendPrixcarton={sendPrixcarton}/>)}
+    {showecommerce && (<Ecommerce  sendPrixcarton={sendPrixcarton} id="ecommerce"/>)}
     
     
     </div> 
 
-    {/*<div className="calcul-montant">
-    <p>DÉMÉNAGEMENT CLASSIQUE <br/> 695 km · 25 m3</p>
-
+{/*
+<div className="calcul-montant">
+<p>DÉMÉNAGEMENT CLASSIQUE <br/> 695 km · 25 m3</p>
 <div className="total-formulaire"><div>Total:</div>
 <div>120 €</div>
 </div> 
@@ -685,31 +791,24 @@ Quelques exemples :
 Nous reviendrons vers vous avec un tarif dans un délai de 24h00 ouvrées. Pensez à nous laisser vos coordonnées (en créant votre compte) afin que nous puissions vous contacter si nous avons des questions.
 </p>
 </div>
-
-
-
 <p className="width90">Commentaires</p>
 <div className="width90-2-center">
 <p className="width90-2">
-    
 <div className="text-fomulaire">
-Faites-nous part de tout ce qui est important pour vous. Ces informations seront ajoutées sur le Devis entre vous et le déménageur sélectionné.
-
+Faites-nous part de tout ce qui est important pour vous.
+ Ces informations seront ajoutées sur le Devis entre vous 
+ et le déménageur sélectionné.
 </div>
 </p>
-
-
 </div>
 <div className="wrap-formulaire">
 <div className="calcul-bloc">
-<div className="center-comments">Commentaires  </div>
+
 <div className="calcul-bloc-item">
  
 <div className="inter-calcul-item">
 
 <textarea type="text"  className="input-commantaires" />
-
-
 </div>
 </div>
 </div>
@@ -719,16 +818,15 @@ Faites-nous part de tout ce qui est important pour vous. Ces informations seront
 
 </div>
 
-<div className="calcul-montant">
-
-<p>DÉMÉNAGEMENT<br/></p>
+<div className="calcul-montant"><p>DÉMÉNAGEMENT<br/></p>
 
 <div className="total-formulaire">
     <div>Total: {total} €</div>
 
 </div> 
+<div  className=" btn-formule btn-download" 
+onClick={()=>setShowpdf(!showpdf)}>Voir l'inventaire</div>
 {/*<p>voir les variables et la formule:</p>
-
 etage:{numetage} <br/>
 la distace:{valdistance} <br/>
 le résultat de la division euclidienne:{Math.floor(valdistance/10)} <br/>
@@ -737,6 +835,7 @@ moy:{moy}<br/>
 simple:{simple}<br/>
 complique:{complique}<br/>*/}
 </div>
+
 <footer className="footer-formulaire">©2021 TMSDEM</footer>
     </div>)
 }

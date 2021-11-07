@@ -69,9 +69,9 @@ export default function NavBar() {
 <div className="item"><Link to="/presentation" style={{"textDecoration" : "none"}}>TMS-DEM</Link></div>
 <div className="item"><Link to="/services">Nos services</Link>  </div>
 <div className="item"><Link to="/e-commerce">Boutique</Link> </div>
-<div className="item"><Link to="">Contact</Link>  </div>
+<div className="item"><Link to="/contact">Contact</Link>  </div>
 <div className="btn-devis largeMenu">
-  <button> Demander un devis</button>
+  <button> <Link to="/soto">Demander un devis</Link></button>
 </div>
 
 
@@ -86,9 +86,9 @@ export default function NavBar() {
 <div className="item"><Link to="/presentation" style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>TMS-DEM</Link></div>
 <div className="item"><Link to="/services"  style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Nos services</Link>  </div>
 <div className="item"><Link to="/e-commerce"  style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Boutique</Link> </div>
-<div className="item"><Link to=""  style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Contact</Link>  </div>
+<div className="item"><Link to="/contact"  style={{"textDecoration" : "none", "color":"black", "fontSize":"1.1em"}}>Contact</Link>  </div>
 <div className="btn-devis">
-  <button> Demander un devis</button>
+  <button> <Link to="/soto">Demander un devis</Link></button>
 </div>
 
 <div className="itemContainerInfo"> 

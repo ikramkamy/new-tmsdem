@@ -11,6 +11,8 @@ import NavBar from './Component/navBar/NavBar'
 import Presentation from './Component/Presentation';
 import Service from './Component/Service';
 import Footer from './Component/footer/Footer';
+import Contactus from './Component/Contact';
+import Pdfinvent from './Component/Pdfinventaire';
 function App() {
   const sendPrixcarton=(data)=>{
     console.log("cart")
@@ -54,6 +56,14 @@ function App() {
      <Presentation/>
   
 </Route>
+
+<Route exact path="/contact">
+<NavBar/>
+  <Contactus/>
+  <Footer/>
+</Route>
+
+<Route exact path="/pdf"><Pdfinvent/></Route>
    </Switch>
    
    

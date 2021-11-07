@@ -6,22 +6,22 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    pad: 30px;
 }
 .text-calcul {
     font-size: 1vw;
     width: 70%;
     margin-bottom: 50px;
     margin-top: 50px;
-    
+    border: 1px hidden red;
 }
-
 .wrap-formulaire{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 .les-champs-de-calcul{
@@ -38,11 +38,8 @@
     align-items: center;
     width: 80%;
     height: auto;
- 
     background-color: white;
-    border: 1px solid lightgray;
     border-radius: 5px 5px 5px 5px;
-   
 }
 .calcul-montant{
     display: flex;
@@ -51,7 +48,6 @@
     justify-content: center;
     align-items: center;
     width: 25%;
-    
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 5px 5px 5px 5px;
@@ -59,8 +55,6 @@
     position: fixed;
     top: 100px;
     right: 0px;
-    
-
 }
 .calcul-montant p{
     margin-top: 30px;
@@ -95,30 +89,30 @@ width: 90%;
 
 }
 .text-conatiner{
-    width: 90%;
+    width: 95%;
     margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 300;
+   margin-top: 30px;
+   font-size: 24px;
 }
 .date-input-style{
- 
   border: none;
   border: 1px solid lightgray;
   border-radius: 5px 5px 5px 5px;
 }
 .inter-calcul-item{
     display: flex;
-    width: 90%;
+    width: 95%;
     justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    align-items: center;
+    /*margin-top: 15px;*/
+    /*margin-bottom: 5px;*/
     padding-left: 5px;
     font-size: 12px;
     font-weight: 300;
-   
+    border:  1px hidden red;
+    margin-top: 30px;
 }
-
-/********************************************REMONTAGE DEMONTAGE***************************************/
+/*********************REMONTAGE DEMONTAGE************************/
 .RMNTG{
     display: flex;
     flex-direction: column;
@@ -143,33 +137,41 @@ width: 90%;
 }
 .text-RMNTG{
     width: 80%;
-    font-size: 15pax;
-    font-weight: 100;
+    font-size: 16px;
+    font-weight: 400;
 }
-
-
-
 /********************************STYLING BIG TITLES INSIDE CALCUL BLOC********************************/
-
 .tit-big-first{
     width: fit-content;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 50px;
-    
-}
-.tit-big-second{
-    width: 68.5%;
-    display: flex;
-    justify-content: flex-start;
+    border: 1px hidden red;
     font-size: 18px;
     font-weight: 400;
-    height: 50px;
+}
+.tit-big-second{
+    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 16px;
+    font-weight: 400;
+    /*height: 50px;*/
     align-items: center;
     text-decoration: underline 2px #2c216f;
+    
 }
-
+.big-titles{
+    border: 1px hidden  red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.mrgntop0px{
+    margin-top: 0px;
+    
+}
 /**********************************************TOOL TIPS STYLING*********************************************/
 .tooltip-styling{
     width: 200px;
@@ -177,7 +179,8 @@ width: 90%;
     display:none;
     font-size: 12px;
     color: lightgrey;
-    background-color:#2c216f;
+    background-color:white;
+    color: #2c216f;
     position: absolute;
     padding: 5px;
     border-radius: 5px;
@@ -194,7 +197,8 @@ width: 90%;
     display:none;
     font-size: 12px;
     color: lightgrey;
-    background-color:#2c216f;
+    background-color:white;
+    color: #2c216f;
     position: absolute;
     padding: 5px;
     border-radius: 5px;
@@ -213,7 +217,8 @@ display: flex;
     display:none;
     font-size: 12px;
     color: lightgrey;
-    background-color:#2c216f;
+    background-color:white;
+    color: #2c216f;
     position: absolute;
     padding: 5px;
     border-radius: 5px;
@@ -221,19 +226,64 @@ display: flex;
 }
 /***********************************************YES NO CHECK BOX******************************************************/
 .check-yes-no{
-width: 90%;
+width: 95%;
 display: flex;
 justify-content: flex-start;
 border:  1px hidden red;
 }
+.wrap-yes-no{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#autoo2, #auton2 ,#autoo ,#auton, #volummanu, #volcalc, #louro, #louron , #frigo , #piano , #rmntgN , #rmtgdmtg , #dementaged , #remontager ,#checkbox1 , #checkbox2{
+  border-radius:50%;
+  height:20px;
+  width:20px;
+  color: #2c216f;
+  margin-right: 10px;
+}
+.mdbinput label{
+    border: 1px hidden red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 400;
+}
+.mdbinput{
+    border: 1px hidden blue;
+    
+}
+/************************OBJECT LOURD***********************/
+.wrap-check-yes-no{
+    border: 1px hidden red;
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-bottom: 30px;
+}
+.comment{
+    border: 1px hidden red;
+   text-align: left;
+   width: 60%;
+}
 /*****************************************VOLUM STYLING***************************************************/
 .principale-titles{
-    font-size: 24px;
+   font-size: 24px;
+   /*height: 50px;*/
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  /*margin-bottom: 20px;*/
+   /*margin-top: 30px;*/
 }
 .text-fomulaire{
-    
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px hidden blue;
 }
 .wrap-volum-items{
     border: 1px hidden red;
@@ -245,14 +295,12 @@ border:  1px hidden red;
 }
 .input-vol{
     height: 45px;
- 
     width: 100px;  
 }
 .volum-text{
     font-size: 10px;
     font-family: 400;
     width: 100%;
-    
 }
 #volummanu{
     margin-right: 20px;
@@ -262,14 +310,18 @@ border:  1px hidden red;
 }
 .unit-vol{
     height: 100%;
-    
     font-size:  18px;
 }
 .wrap-volum-items-inter{
     display: flex;
-    width: 50%;
+    width: 70%;
     justify-content: space-between;
     align-items: center;
+    border: 1px hidden red;
+    margin-bottom: 30px;
+}
+.wrap-inout-volume{
+    border: 1px hidden yellow;
 }
 /**********************************************************************************************/
 input{
@@ -279,22 +331,28 @@ input{
 }
 .address-input{
     width: 60%;
+    border: 1px solid lightgrey;
+    margin-right: 20%;
 }
 .select-ville{
-   
     height: 45px;
     border: 1px solid lightgray;
     border-radius: 5px 5px 5px 5px;
-
 }
 .title{
         font-size: 12px;
-        margin-top: 5px;
+       /* margin-top: 5px;*/
         height: 36px;
         width: 100%;
         border: 1px hidden red;
-   
-}
+        display: flex;
+        align-items: flex-end;
+    }
+    .flexstart
+    {
+        display: flex;
+        align-items: flex-start;
+  }
 .title a{
     font-size: 12px;
    color: #2c216f;
@@ -309,8 +367,7 @@ input{
 .btn-formule{
     background-color:#2c216f ;
     color: white;
-    font-size: 15px;
-    
+    font-size: 12px;
     height: 45px;
     display: flex;
     justify-content: center;
@@ -318,20 +375,27 @@ input{
     text-align: center;
     border-radius: 5px 5px 5px 5px;
     width: 20%;
+    cursor: pointer;
 }
 .btn-formule:hover{
     background-color:#514c74 ;
 }
 .width90{
-    width: 80%;
+    width: 60%;
     margin-top: 50px;
     margin-bottom: 50px;
-    font-size: 1.7em;
+    font-size: 24px;
+    border: 1px hidden red;
 }
 .width90-2{
     width: 60%;
-  
-    margin-bottom: 50px;  
+  margin-bottom: 50px; 
+    font-size: 16px;
+    font-weight: 400; 
+}
+.width90-2 li{
+    font-size: 16px;
+    font-weight: 400;
 }
 .width90-2-center{
     width: 80%;
@@ -355,15 +419,21 @@ select{
     border: 1px solid lightgrey;
     width: 100px;
     border-radius: 5px 5px 5px 5px ;
+
 }
 .Myborder-top{
-    border-top: 1px hidden red;
-    padding: 2%;
-
-    flex: 1;
+    border: 1px hidden goldenrod;
+    width: 25%;
 }
-/******************************************FOOTER FORMULAIRE***********************************/
+.dsplyclmn{
+    display: flex;
+    flex-direction: column;
+    border: 1px hidden red;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
 
+/******************************************FOOTER FORMULAIRE***********************************/
 .footer-formulaire{
     width: 100%;
     height: 100px;
@@ -376,7 +446,6 @@ select{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 /*****************************************RESPONSIVR*******************************************/
 @media screen and (max-width:1000px) {

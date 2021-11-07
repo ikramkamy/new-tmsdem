@@ -14,7 +14,7 @@ return(<div className="wrap-nav">
  </div>
 <div className="nav-form-item">
 <div className="nav-inter-item"> 
-    <div className="circle">2</div>Retourtnez à la page d'accueil</div>
+    <div className="circle">2</div><Link to="/">Retourtnez à la page d'accueil</Link></div>
     </div>
 
 <div className="nav-form-item">

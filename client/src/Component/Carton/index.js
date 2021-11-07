@@ -70,10 +70,13 @@ const qadd=(e,p)=>{
   console.log("la quantité",p.quantite)
   console.log("le volume",p.volume)
   setSommevol(sommevol+Number(p.volume));
-  handelCubage(sommevol)
+ 
   forceUpdate();
 }
-
+useEffect(()=>{
+  handelCubage(sommevol)
+  
+},[(sommevol)])
 //console.log("le volume total",sommevol);
 /************************************ADD MINUS ELEM CUBAGE******************************/
 const [q,setQ]=useState(0);
@@ -83,7 +86,7 @@ if(p.quantite==0){
 }else{
   p.quantite=Number(p.quantite)-1;
   setSommevol(sommevol-Number(p.volume));
-  //handelCubage(sommevol)
+  handelCubage(sommevol)
   forceUpdate();
 }}
 /*************************************LA SOMME DES VOLUMES*****************************/
@@ -94,30 +97,43 @@ useEffect(()=>{
 */
 return(
 <div className="carton">
+<h1 style={{marginLeft:"5%",fontSize:"24px"}}>
+L'inventaire de votre déménagement</h1>
+<div className="wrap-carton-elemnt">
 <div className="calcul-carton">
-<div className="text-carton">
-  <div>
-<h1>L'inventaire de votre déménagement</h1>
-<p>Listez vos meubles pièce par pièce.</p>
 
-<h4>Attention, ne pas oublier de compter le cabanon de jardin, la cave, le garage, le grenier et les cartons d'objets posés sur les meubles ou par terre !</h4>
+<div className="text-carton">
+<div>
+
+<div className=" text-fomulaire">
+Listez vos meubles pièce par pièce.</div> 
+<div className=" text-fomulaire">
+Attention, ne pas oublier de compter le cabanon de
+ jardin, la cave, le garage, le grenier et les cartons
+  d'objets posés sur les meubles ou par terre !
+  </div>
 </div>
 {/*<div className="img-carton">
 <img src="/images/carton.png" className="img-carton-size"/>
 </div>*/}
 
 </div>
-<div className=" btn-add-room"  onClick={addtoroom}>Ajouter une piéce</div>
+<div className=" btn-add-room" 
+ onClick={addtoroom}>
+  Ajouter une piéce
+  </div>
 <div className="add-box">
 <select className="select-la-piece" name="name" id="select" value={input.name} onChange={handelroom}>
                 <option value="chambre">selectionner</option>
-                <option value="chambre ">Chambre</option>
-                <option value="Jardin" >Jardin</option>
-                <option value="salon" >salon</option>
+                <option value="chambre">Chambre</option>
+                <option value="Jardin">Jardin</option>
+                <option value="salon">salon</option>
                 <option value="cuisine">cuisine</option>
 </select>
 </div>
-<h2>Les piéces selectionnées:</h2>
+<div className="text-fomulaire">
+  Les piéces selectionnées:
+  </div>
 {room?.map((e)=>
 <div className="wrap-room">
  <div className="title-wrap-room">
@@ -154,16 +170,17 @@ return(
 </div>
 
 <div className="Total-carton">
-<h1>Calcul du volume total</h1>
-<div className="resultat-volume">
 
-</div>
-<h3>Le volume total:</h3>
-<h3>{sommevol}m3</h3>
-<div className="btn-carton">Continue</div>
-<div className="btn-carton" >Retour</div>
-</div>
 
+<div className="tail-volum-result">
+  Le volume total:
+  </div>
+<h3 style={{fontWeight:"600"}}>{sommevol}m<sup>3</sup></h3>
+
+{/*<div className="btn-carton">Continue</div>
+<div className="btn-carton" >Retour</div>*/}
+</div>
+</div>
     </div>)
 }
 export default Carton;

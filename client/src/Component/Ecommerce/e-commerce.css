@@ -11,10 +11,15 @@
 }
 .product-titles{
     margin-bottom: 20px;
+    margin-top: 20px;
     width: 80%;
-    
-    font-size: 1.3em;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 500;
+}
+.product-s-titles{
+    font-size: 16px;
+    font-weight: 400; 
+    width: 80%;
 }
 .carton-cathegorie-bloc{
     width: 80%;
@@ -22,6 +27,13 @@
     
     display: flex;
     flex-wrap: wrap;
+}
+#d1 ,#d{
+    border-radius:50%;
+    height:20px;
+    width:20px;
+    color: #2c216f;
+    margin-right: 10px;
 }
 /*****************************************ITEM E COMMERCE*****************************************/
 
@@ -85,8 +97,6 @@ display: none;
 font-size: 1em;
 cursor: pointer;
 font-weight: 600;
-
-
 }
 .wrap-icon-item{
     border: 2px solid white;
@@ -168,5 +178,12 @@ font-weight: 600;
     align-items: center;
     
 }
-
-
+/************************seperations*******************************/
+.sepa-catégorie-cartons{
+    display: flex;
+    margin-bottom: 20px;
+    width: 95%;
+}
+.check-box-e-commerce{
+    margin-right: 20px;
+}
