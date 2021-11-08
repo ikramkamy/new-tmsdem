@@ -438,8 +438,15 @@ font-weight: 600;
 
 /* RESPONSIVE WEB SITE */
 
-
-
+.buttonShop button a{
+    font-size: 24px;
+    font-weight: 600; 
+    color: #2C216F; 
+    text-decoration: none;
+}
+.buttonShop button a:hover{
+color:#2C216F;
+}
 @media screen and (min-width : 1550px) {
     .servceDetails .servceDetailsServices{
         border: 1px hidden black;

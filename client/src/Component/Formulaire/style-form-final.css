@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: flex-end;
     pad: 30px;
+    border: 1px hidden red;
 }
 .text-calcul {
     font-size: 1vw;
@@ -254,8 +255,12 @@ border:  1px hidden red;
     font-weight: 400;
 }
 .mdbinput{
+   
     border: 1px hidden blue;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
 }
 /************************OBJECT LOURD***********************/
 .wrap-check-yes-no{

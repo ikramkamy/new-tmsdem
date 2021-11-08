@@ -8,7 +8,7 @@
     position: fixed;
     top:0px;
     z-index: 2;
-   width: 70%;
+   width: 100%;
     height:fit-content;
     border: 1px hidden red;
     background-color: white;
@@ -20,7 +20,7 @@
     background-color: #2c216f;
     color: white;
     font-size: 24px;
-    width: 100%;
+    width: 70%;
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
@@ -52,10 +52,23 @@
     width: 80%;
 }
 .invent-title{
-    background-color:#2c216f;
-    width: 80%;
-    color: white;
+    background-color:white;
+    width: 70%;
+    color: #2c216f;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
-    height: 40px;
+   display: flex;
+   justify-content: space-between;
+   border: 1px hidden red;
+}
+.invent-item{
+    border: 1px hidden red;
+   
+}
+.invent-inter{
+    width: 50%;
+}
+.principale-titles-pdf{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

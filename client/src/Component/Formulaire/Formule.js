@@ -12,6 +12,7 @@ import { jsPDF } from "jspdf";
 import Pdfinvent from '../Pdfinventaire';
 import './pdf.css';
 import NavFomule from '../navFomule';
+import logo from "../../images/logo-01.png";
 //simport ReactTooltip from 'react-tooltip';
 const Formulefinale=()=>{
 const forceUpdate = useForceUpdate();
@@ -285,16 +286,15 @@ const sendPrixcarton=(data)=>{
 /***********************************PDF GENERATION**********************************/
 const [showpdf,setShowpdf]=useState(false);
 const generatepdf=()=>{
-    var doc= new jsPDF('portrait','pt', 'a4');
+    var doc= new jsPDF('portrait','pt', 'a3');
     /*
     doc.text(60,60,'Entreprise: Amogela');
     doc.text(60,40,'Télèphone:+2130.......');
     doc.text(60,20,'Email:email@gmail.com');
     doc.text(60,10,"liste");
     */
-    doc.html(document.querySelector("#all"),{callback: function(pdf){pdf.save("inventaire.pdf")}})
-    
-    }
+doc.html(document.querySelector("#all"),{callback: function(pdf){pdf.save("inventaire.pdf")}})
+}
 
     /***********************date get**************** */
     const [date,setDate]=useState("")
@@ -312,8 +312,19 @@ return(
     <div  className="wrap-pdf-stylig" id="all">
     <Pdfinvent  generatepdf={generatepdf} className="wrap-pdf" >
    <div className="header-inventaier" onClick={()=>setShowpdf(false)}>&times;</div>
-   <h1 className="principale-titles invent-title">Votre demande</h1>
-
+   <h1 className="principale-titles invent-title">
+       <img src={logo}/>
+       <div className="invent-inter">
+       <div className="invent-item">contact@tms-dem.com</div>
+       <div  className="invent-item">+33 1 41 77 11 32</div>
+       </div> 
+       <div className="invent-inter">
+       <div className="invent-item">Service client 7j/7</div>
+       <div className="invent-item">300 A Rue Marcel Paul,
+94500 Champigny-sur-Marne, France</div>
+       </div>
+       </h1>
+       <h1 className="principale-titles-pdf"> Votre demande</h1>
 <div className="inevnt-item">
     <div>La date de démènagement :</div>
     <div>{date}</div>
@@ -683,18 +694,18 @@ et le remontage de votre mobilier ?</p>
 <div className="calcul-bloc">
 <div className="calcul-bloc-item">
 <div className="inter-calcul-item dsplyclmn">
-<div className="">
+<div className="mdbinput">
 <MDBInput label="Aucune aide" type="checkbox" id="rmntgN" checked={rmntgN}  onChange={handelRMNT1}/>
 </div>
 
-<div className="">
+<div className="mdbinput">
 <MDBInput label="Démontage & remontage" type="checkbox" id="rmtgdmtg" checked={rmtgdmtg} onChange={handelRMNT2} /> 
 </div>
  
-<div className="">
+<div className="mdbinput">
 <MDBInput label="Démontage seul" type="checkbox" id="dementaged"  checked={dementaged} onChange={handelRMNT3}/> 
 </div>
-<div className="">
+<div className="mdbinput">
 <MDBInput label="Remontage seul" type="checkbox" id="remontager" checked={remontager} onChange={ handelRMNT4}  /> 
 </div> 
     </div>   
