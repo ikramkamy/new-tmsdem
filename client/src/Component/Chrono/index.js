@@ -3,6 +3,7 @@ import './chrono.css';
 import jsPDF from 'jspdf';
 import  {MDBInput}  from 'mdbreact';
 import InventChrono from '../Pdfinventaire/InventChrono';
+import Ecommerceall from '../Ecommerce';
 const Chrono=()=>{
 
 /**************PDF********************************/
@@ -121,7 +122,7 @@ const handelform7=()=>{
 }
 /****************************TOTAL*************************************/
 useEffect(()=>{
-  setTotal(0+val41+val42+val43+val45+val44+val71+val72+val73+val75+val74)
+  setTotal(0+val41+val42+val43+val45+val44+val71+val72+val73+val75+val74+pricart)
 
 })
 /******************************FORMULE 7 H*************************/
@@ -209,6 +210,36 @@ const handelform75=()=>{
   if(form75==false){setVal75(200);}
   else{setVal75(0);}
   }
+
+  /*******************************E-commerce pour chrono**************************/
+const[showecommerce,setShowecommerce]=useState(false);
+const[box1,setBox1]=useState(false);
+const[box2,setBox2]=useState(true);
+const handelecommerce=()=>{
+  setShowecommerce(!showecommerce)    
+}
+const handelCheck=()=>{
+  setBox1(true); 
+  setBox2(false)
+  setShowecommerce(true) 
+}
+const handelCheck2=()=>{
+  setBox2(true); 
+  setBox1(false)
+  setShowecommerce(false) 
+}
+/**************************************Calcul pri carton******************************/
+const [pricart,setPricart]=useState(0);
+const sendPrixcarton=(data)=>{
+  setPricart(data);
+   /* 
+    setVarchange(varchange+1);
+    */
+}
+
+
+
+/***********************************************************************************/
  return(<div className="principal-formulaire">
 
 <div style={{width:"80%"}}>
@@ -233,39 +264,63 @@ Votre devis se recalcule automatiquement.</div>
 
 {form4 && (
 <div className="chrono-form">
+<div className="mdbinput">
 <MDBInput label="une personne + un camion" type="checkbox" id="form41" checked={form41} onChange={handelform41}/>
+</div>
+<div className="mdbinput">
 <MDBInput label="2 personnes + un camion" type="checkbox" id="form42" checked={form42} onChange={handelform42}/>
+</div>
+
+<div className="mdbinput">
 <MDBInput label="3 personnes + un camion" type="checkbox" id="form43" checked={form43} onChange={handelform43}/>
+</div>
+<div className="mdbinput">
 <MDBInput label="4 personnes + un camion" type="checkbox" id="form44" checked={form44} onChange={handelform44}/>
+</div>
+<div className="mdbinput">
 <MDBInput label="un camion additionnel" type="checkbox" id="form45" checked={form45} onChange={handelform45}/>
+</div>
 </div>)}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 {form7 &&(<div className="chrono-form">
-  <MDBInput label="une personne + un camion" type="checkbox" id="form71" checked={form71} onChange={handelform71}/>
+<div className="mdbinput">
+<MDBInput label="une personne + un camion" type="checkbox" id="form71" checked={form71} onChange={handelform71}/>
+  </div>
+  <div className="mdbinput">
 <MDBInput label="2 personnes + un camion" type="checkbox" id="form72" checked={form72} onChange={handelform72}/>
+</div>
+<div className="mdbinput">
 <MDBInput label="3 personnes + un camion" type="checkbox" id="form73" checked={form73} onChange={handelform73}/>
+</div>
+<div className="mdbinput">
 <MDBInput label="4 personnes + un camion" type="checkbox" id="form74" checked={form74} onChange={handelform74}/>
+</div>
+<div className="mdbinput">
 <MDBInput label="un camion additionnel" type="checkbox" id="form75" checked={form75} onChange={handelform75}/>
+</div>
 </div>)
 }
 
-
-
-
-
+Avez-vous besoin de fournitures pour votre déménagement?
+<div className="wrap-formulaire-all">
+<div className="calcul-bloc-all">
+<div className="calcul-bloc-item-all">
+<div className="inter-calcul-item-all">
+<div className="wrap-check-yes-no-all">
+<div className=" mdbinput"> 
+<MDBInput label="oui" type="checkbox" id="checkbox1" checked={box1} onChange={handelCheck}/>
+</div>  
+<div className=" mdbinput" >
+<MDBInput label="Non" type="checkbox" id="checkbox2" checked={box2} onChange={handelCheck2}/>
+</div> 
+</div>
+</div>
+    </div>   
+{showecommerce && (<Ecommerceall sendPrixcarton={sendPrixcarton} id="ecommerce"/>)}
+    
+    
+    </div> 
+</div>
 
 
 
@@ -289,7 +344,7 @@ Votre devis se recalcule automatiquement.</div>
 
 </div>
 </div>
-
+<footer className="footer-formulaire">©2021 TMSDEM</footer>
     </div>)
 }
 export default Chrono;

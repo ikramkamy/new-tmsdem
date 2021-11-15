@@ -73,7 +73,6 @@ align-items: center;
 margin-bottom: 50px;
 padding-left: 5px;
 padding-right: 5px;
-
 }
 .calcul-bloc-item{
     border-bottom: 1px solid lightgray;
@@ -92,8 +91,8 @@ width: 90%;
 .text-conatiner{
     width: 95%;
     margin-bottom: 20px;
-   margin-top: 30px;
-   font-size: 24px;
+    margin-top: 30px;
+    font-size: 24px;
 }
 .date-input-style{
   border: none;
@@ -119,7 +118,6 @@ width: 90%;
     flex-direction: column;
     margin-bottom: 50px;
 }
-
 .title-RMNTG{
     width: 100%;
     font-size: 20px;
@@ -132,7 +130,6 @@ width: 90%;
     align-items: center;
 }
 .input-RMNTG{
-    
     width: 50px;
     cursor: text;
 }
@@ -161,7 +158,6 @@ width: 90%;
     /*height: 50px;*/
     align-items: center;
     text-decoration: underline 2px #2c216f;
-    
 }
 .big-titles{
     border: 1px hidden  red;
@@ -258,7 +254,7 @@ border:  1px hidden red;
    
     border: 1px hidden blue;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 50px;
 }
@@ -272,10 +268,10 @@ border:  1px hidden red;
 }
 .comment{
     border: 1px hidden red;
-   text-align: left;
-   width: 60%;
+    text-align: left;
+    width: 60%;
 }
-/*****************************************VOLUM STYLING***************************************************/
+/*************************************VOLUM STYLING***********************/
 .principale-titles{
    font-size: 24px;
    /*height: 50px;*/

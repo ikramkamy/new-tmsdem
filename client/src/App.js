@@ -14,9 +14,13 @@ import Footer from './Component/footer/Footer';
 import Contactus from './Component/Contact';
 import Pdfinvent from './Component/Pdfinventaire';
 import Chrono from './Component/Chrono';
+import Ecommerceall from './Component/Ecommerce/Ecommerceall';
 function App() {
   const sendPrixcarton=(data)=>{
     console.log("cart")
+}
+const show=()=>{
+  show=true;
 }
   return (
     <div className="App">
@@ -37,7 +41,7 @@ function App() {
   
 <Route exact path="/e-commerce">
   <NavBar/>
-  <Ecommerce  sendPrixcarton={sendPrixcarton} />
+  <Ecommerceall sendPrixcarton={sendPrixcarton} />
 <Footer/>
 
    </Route>

@@ -186,6 +186,8 @@ height: auto;
 .title-wrap-room{
     width: 90%;
     display: flex;
+    justify-content:space-between;
+    border: 1px hidden red;
 }
 .btns-wrap-room{
     display: flex;
@@ -196,6 +198,7 @@ height: auto;
 .wrap-btns-cubage-elem{
     border-bottom: 1px solid #2c216f;
     display: flex;
+    align-items: flex-end;
     margin-bottom: 3px;
 }
 .btn-add-room{
@@ -235,4 +238,11 @@ select{
 }
 .tail-volum-result{
     font-size: 18px;
+}
+.trash-cubage{
+    color: #ed1c24;
+    margin-left: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 5px;
 }

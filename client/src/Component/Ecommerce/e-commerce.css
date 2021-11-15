@@ -4,10 +4,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px hidden red;
 }
 .carton-cathegorie-bloc{
     display: flex;
     margin-bottom: 10px;
+   
 }
 .product-titles{
     margin-bottom: 20px;
@@ -36,7 +38,6 @@
     margin-right: 10px;
 }
 /*****************************************ITEM E COMMERCE*****************************************/
-
 .wrap-Item{
     height: 350px;
     width: 200px;
@@ -48,6 +49,7 @@
     flex-direction: column;
     margin-left: 20px;
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 .wrap-Item:hover
 .description-carton{
@@ -74,15 +76,12 @@ display: none;
     margin: 15px;
 }
 .quantite{
-    
     width: 100%;
     height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: lightgray;
-    
-   
 }
 .quantite:hover
     .Item-Icons, .wrap-quantite{
@@ -140,18 +139,24 @@ font-weight: 600;
     */
     background-color: white;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.row{
+.myrow{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    background-color: lightgray;
+    width: 80%;
+    /*background-color: lightgray;*/
     margin-bottom: 3px;
 }
 .close-cart{
    
-    margin-right: 20px;   
+    margin-right: 20px; 
+    font-size: 24px;  
+    cursor: pointer;
 }
 .cart-item{
    width: 200px;

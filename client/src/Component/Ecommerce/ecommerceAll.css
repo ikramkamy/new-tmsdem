@@ -1,0 +1,15 @@
+.carton-cathegorie-bloc-all{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+}
+.mrgtop{
+    margin-top: 100px;
+}
+/*********************************Item ALL*******************************************/
+.wrap-icon-itemall{
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}

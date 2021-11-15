@@ -32,7 +32,11 @@ tab:[]
 }
 //console.log("input",input);
 const addtoroom=()=>{
-setRoom([...room,input]);
+  if(input.name===""){
+    alert("vous n'avez pas selectionner une piéce")
+  }
+  else{setRoom([...room,input]);}
+
 }
 //console.log("Room",room);
 const [input2,setInput2]=useState({
@@ -41,9 +45,13 @@ const [input2,setInput2]=useState({
   prix:0,
   quantite:0
 });
+
+const remove=(e)=>{
+  alert("etes-vous sur que vous voulez supprimer cette piéce!")
+room.splice(room.indexOf(e),1);
+forceUpdate();
+}
 /*************************************************/
-
-
 const addelem=(e)=>{
 //console.log('index of', room.indexOf(e) )
   for(let i=0 ; i<room.length;i++){
@@ -71,6 +79,17 @@ const qadd=(e,p)=>{
   console.log("le volume",p.volume)
   setSommevol(sommevol+Number(p.volume));
  
+  forceUpdate();
+}
+
+/******remove element cubage */
+const removeItem=(e,p)=>{
+
+  for(let i=0 ; i<room.length;i++){
+    if(room.indexOf(e)==room.indexOf(room[i])){
+    e["tab"].splice(e["tab"].indexOf(p),1);
+  }
+  }
   forceUpdate();
 }
 useEffect(()=>{
@@ -122,13 +141,27 @@ Attention, ne pas oublier de compter le cabanon de
  onClick={addtoroom}>
   Ajouter une piéce
   </div>
+  
 <div className="add-box">
-<select className="select-la-piece" name="name" id="select" value={input.name} onChange={handelroom}>
-                <option value="chambre">selectionner</option>
+<select className="select-la-piece"  name="name" id="select" value={input.name} onChange={handelroom}>
+               <option value="">selectionner</option>
                 <option value="chambre">Chambre</option>
-                <option value="Jardin">Jardin</option>
                 <option value="salon">salon</option>
+                <option value="Salle à manger">Salle à manger</option>
+                <option value="Salle de bain">Salle de bain</option>
+                <option value="WC">WC</option>
                 <option value="cuisine">cuisine</option>
+                <option value="Couloir">Couloir</option>
+                <option value="Jardin">Jardin</option>
+                <option value="Garage">Garage</option>
+                <option value="Cave">Cave</option>
+               
+                
+                
+                
+                
+               
+                
 </select>
 </div>
 <div className="text-fomulaire">
@@ -137,29 +170,35 @@ Attention, ne pas oublier de compter le cabanon de
 {room?.map((e)=>
 <div className="wrap-room">
  <div className="title-wrap-room">
- <svg width="24" height="24" viewBox="0 0 24 24" color="#2c216f"><path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z" /></svg> 
-   {e.name}</div> 
-<select name="elem" value={e.tab} onChange={handelelem}  >
+   <div style={{display:"flex"}}>
+ <svg width="24" height="24" viewBox="0 0 24 24" color="#2c216f">
+   <path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z" /></svg> 
+  <div>{e.name}</div> 
+  </div>
+  <div><FaTrash className="trash-cubage" onClick={()=>remove(e)}/></div>  
+   
+   </div> 
+<select name="elem" value={e.tab.name} onChange={handelelem}  >
                 <option value="selectionner 0 30">selectionner</option>
                 <option value="table 1.5 30">table</option>
                 <option value="chaise 0.5 30" >chaise</option>
                 <option value="lit 2  30" >lit</option>
                 <option value="carton 0.75 30">carton livre</option>
-                <option value="carton 1 30">carton standard</option>
+                <option value="carton 0.1 30">carton standard</option>
 </select>
   <div className="wrap-elems-room">
     <div className="btns-wrap-room">
       
   <button  onClick={()=>addelem(e)} className="btn-add-room">Ajouter</button>
- 
   </div>
       {e.tab?.map((p)=><div className="wrap-btns-cubage-elem">
       <div className="cubage-item-name" >
-        
-{p.name}</div>
+<div>{p.name}</div>
+</div>
       <button onClick={()=>qminus(p)}><FaMinus  className="cubage-icon"/></button>
       <div className="cubage-quantite">{p.quantite}</div>
       <button  onClick={()=>qadd(e,p)}><FaPlus className="cubage-icon"/></button>
+      <div><FaTrash className="trash-cubage" onClick={()=>removeItem(e,p)}/></div>
   </div>)}
 
 

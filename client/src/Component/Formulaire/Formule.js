@@ -13,6 +13,7 @@ import Pdfinvent from '../Pdfinventaire';
 import './pdf.css';
 import NavFomule from '../navFomule';
 import logo from "../../images/logo-01.png";
+
 //simport ReactTooltip from 'react-tooltip';
 const Formulefinale=()=>{
 const forceUpdate = useForceUpdate();
@@ -256,8 +257,8 @@ Number(mnt2)*1+
 Number((Math.floor(valdistance/10)*40))+
 Number((Math.floor(valdistance2/10)*40))+
 Number(cubage*10)+
-(simple*40)*tarifRMNTG+(moy*60)*tarifRMNTG+
-pricart+(complique*80)*tarifRMNTG)
+(simple*20)*tarifRMNTG+(moy*30)*tarifRMNTG+
+pricart+(complique*40)*tarifRMNTG)
 
 },[varchange])
 /*************************************************VOIR LES OBJETS LOURD*******************************/
@@ -283,6 +284,13 @@ const sendPrixcarton=(data)=>{
     setPricart(data);
     setVarchange(varchange+1);
 }
+const [shopcart,setShopcart]=useState([]);
+const sendCart=(data)=>{
+    setShopcart(data);
+    forceUpdate();
+    console.log("shop from ecommence to formule",shopcart)
+    setVarchange(varchange+1);
+}
 /***********************************PDF GENERATION**********************************/
 const [showpdf,setShowpdf]=useState(false);
 const generatepdf=()=>{
@@ -295,21 +303,22 @@ const generatepdf=()=>{
     */
 doc.html(document.querySelector("#all"),{callback: function(pdf){pdf.save("inventaire.pdf")}})
 }
-
-    /***********************date get**************** */
+/***********************date get**************** */
     const [date,setDate]=useState("")
     const getDate=(event)=>{
         setDate(event.target.value)
       
     }
- 
+ /*************************GET CART FROM E COMMERC COMPONENT*************************/
+
 return(
 
 <div className="principal-formulaire">
 
   {showpdf && (
+      <div className="modal-cart">
     <div className="pdf-stylig"> 
-    <div  className="wrap-pdf-stylig" id="all">
+    <div  className="wrap-pdf-stylig pos-pdf" id="all">
     <Pdfinvent  generatepdf={generatepdf} className="wrap-pdf" >
    <div className="header-inventaier" onClick={()=>setShowpdf(false)}>&times;</div>
    <h1 className="principale-titles invent-title">
@@ -321,10 +330,11 @@ return(
        <div className="invent-inter">
        <div className="invent-item">Service client 7j/7</div>
        <div className="invent-item">300 A Rue Marcel Paul,
-94500 Champigny-sur-Marne, France</div>
+       94500 Champigny-sur-Marne, France
+       </div>
        </div>
        </h1>
-       <h1 className="principale-titles-pdf"> Votre demande</h1>
+       <h1 className="principale-titles-pdf">Votre demande</h1>
 <div className="inevnt-item">
     <div>La date de démènagement :</div>
     <div>{date}</div>
@@ -341,8 +351,28 @@ return(
     <div>Le volume de total  calculé:</div>
     <div>{cubage}</div>
     </div>
-<div className="inevnt-item"><div>Le volume de total estimé:</div><div>{vol1}</div></div>
-<div className="inevnt-item"><div>La liste d'achat: </div></div>
+<div className="inevnt-item">
+    <div>Le volume de total estimé:</div>
+    <div>{vol1}</div></div>
+<div className="inevnt-item">
+    <div>La liste d'achat: </div>
+</div>
+
+<div className="wrap-cart-row">
+<div className="cart-row">
+         <div className="item-list-achat">Produit</div>
+         <div className="item-list-achat"> La quatité</div>
+         <div className="item-list-achat"> Le prix</div>
+         </div>
+{shopcart.map((e)=>
+     <div className="cart-row">
+         <div className="item-list-achat">{e.name}</div>
+         <div className="item-list-achat"> {e.quantite}</div>
+         <div className="item-list-achat"> {e.prix}</div>
+         </div>
+     
+    )}
+ </div>
 <div className="inevnt-item" style={{marginBottom:"50px"}}>
     <div>Le montant total:</div>
     <div>{total}</div>
@@ -350,8 +380,8 @@ return(
   
     </Pdfinvent>
     </div>
-    <div  className=" btn-formule btn-download"
-     onClick={generatepdf}>Télècharger</div> 
+    <div  className=" btn-formule btn-download" onClick={generatepdf}>Télècharger</div> 
+    </div>
     </div>)} 
   
 <div style={{width:"80%"}}>
@@ -695,7 +725,9 @@ et le remontage de votre mobilier ?</p>
 <div className="calcul-bloc-item">
 <div className="inter-calcul-item dsplyclmn">
 <div className="mdbinput">
-<MDBInput label="Aucune aide" type="checkbox" id="rmntgN" checked={rmntgN}  onChange={handelRMNT1}/>
+<MDBInput label="Aucune aide" 
+type="checkbox" id="rmntgN" 
+checked={rmntgN}  onChange={handelRMNT1}/>
 </div>
 
 <div className="mdbinput">
@@ -745,12 +777,8 @@ Bureau simple, commode de taille moyenne, étagère simple, lit simple, lit béb
 
     </div>
 )}     
-    
 </div> 
-
-    
 </div>
-
 </div>
 <p className="width90">
 Avez-vous besoin de fournitures pour votre déménagement?
@@ -771,7 +799,7 @@ Avez-vous besoin de fournitures pour votre déménagement?
     </div>   
     
     
-    {showecommerce && (<Ecommerce  sendPrixcarton={sendPrixcarton} id="ecommerce"/>)}
+    {showecommerce && (<Ecommerce  sendPrixcarton={sendPrixcarton} sendCart={sendCart} id="ecommerce"/>)}
     
     
     </div> 
@@ -799,7 +827,10 @@ Quelques exemples :
 <li style={{marginLeft:"20px"}}>3- transporter un objet spécifique (très lourd, très fragile, ou de grande valeur),</li>
 </ul>
 <br/>
-Nous reviendrons vers vous avec un tarif dans un délai de 24h00 ouvrées. Pensez à nous laisser vos coordonnées (en créant votre compte) afin que nous puissions vous contacter si nous avons des questions.
+Nous reviendrons vers vous avec un tarif dans un 
+délai de 24h00 ouvrées. Pensez à nous laisser vos
+coordonnées (en créant votre compte) afin que nous
+puissions vous contacter si nous avons des questions.
 </p>
 </div>
 <p className="width90">Commentaires</p>

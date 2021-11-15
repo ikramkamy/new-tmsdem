@@ -10,16 +10,16 @@ return(<div className="wrap-nav">
 <FaBuilding className="icon-nav-formule"/></div>
 <div className="nav-form-item">
     <div className="nav-inter-item">  
-    <div className="circle">1</div>Ajoutez vos options</div> 
+    <Link className="nav-inter-item" to="/soto"><div className="circle">1</div> La formule Soto</Link></div> 
  </div>
 <div className="nav-form-item">
 <div className="nav-inter-item"> 
-    <div className="circle">2</div><Link to="/">Retourtnez à la page d'accueil</Link></div>
+   <Link className="nav-inter-item" to="/">  <div className="circle">2</div> Retourtnez à la page d'accueil</Link></div>
     </div>
 
 <div className="nav-form-item">
 <div className="nav-inter-item">
-    <div className="circle">3</div>Réservez votre déménagement</div>
+    <Link to="/chrono" className="nav-inter-item"> <div className="circle">3</div> La formule Chrono</Link></div>
 </div>
 <div className="nav-form-item speration"></div>
 <div className="nav-form-item">
