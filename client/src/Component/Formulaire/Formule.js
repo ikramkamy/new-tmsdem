@@ -311,6 +311,17 @@ const Formulefinale = () => {
 
     }
 
+
+    window.addEventListener('scroll', () => {
+        const spaceTot = document.querySelector('.tot')
+        let top = window.scrollY;
+        if(top > 3400) {
+            spaceTot.style.background = "white"
+        }
+else{
+    spaceTot.style.background = "rgba(44,33,111,0.1)"
+}
+    })
     return (
 
         <div className="principal-formulaire">
