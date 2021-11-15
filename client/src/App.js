@@ -14,8 +14,26 @@ import Footer from './Component/footer/Footer';
 import Contactus from './Component/Contact';
 import Pdfinvent from './Component/Pdfinventaire';
 import Chrono from './Component/Chrono';
+import Comp from '../src/images/Comp 1.gif'
 import Ecommerceall from './Component/Ecommerce/Ecommerceall';
 function App() {
+
+  const [showAlertBox, setShowAlertBox] = useState(false)
+  const showAlert = () => {
+    setShowAlertBox(!showAlertBox)
+  }
+
+
+useEffect(() => {
+
+  setTimeout(() => {
+    showAlert() 
+  },2000);
+
+
+
+}, [])
+
   const sendPrixcarton=(data)=>{
     console.log("cart")
 }
@@ -46,6 +64,52 @@ const show=()=>{
 
    </Route>
   
+
+
+   <Route  path="/boutique">
+  <NavBar/>
+  <div className="originalBoutiquePage"> 
+  <div className="originalBoutiqueContainer"> 
+
+ <h1 className="boutTitle"> Notre Boutique </h1>
+ 
+  <Ecommerce  sendPrixcarton={sendPrixcarton}  className="ecommComponent" Style={{border : "1px solid red"}} />
+  
+  </div>
+
+{
+
+showAlertBox && <div className="alertBoxBoutique">
+  <div className="alertBoxBoutiqueContents">
+    <div className="closeButtonAlertBox" onClick={() => setShowAlertBox(false)}> X </div>
+    <div>  <h4> Vous envisagez de déménager ? </h4></div>
+    <div> <h5> Découvrez nos services </h5></div>
+<div className="contentArrow"> 
+<div> 
+ <img src={Comp} />
+ </div>
+  </div>
+    <div className="buttonGroupeBoutiqueAlert">
+<div> <button> Soto</button> </div>
+<div> <button> Chrono</button>  </div>
+<div> <button> Stock</button>  </div>
+      </div>
+    </div>
+    </div>
+
+}
+ 
+
+
+
+  </div>
+<Footer/>
+
+   </Route>
+
+
+
+
    <Route exact path="/services" >
    <NavBar/>
      <Service/>

@@ -116,7 +116,7 @@ useEffect(()=>{
 */
 return(
 <div className="carton">
-<h1 style={{marginLeft:"5%",fontSize:"24px"}}>
+<h1 className="cartonGeneralTitle" style={{fontSize:"24px"}}>
 L'inventaire de votre déménagement</h1>
 <div className="wrap-carton-elemnt">
 <div className="calcul-carton">
@@ -124,12 +124,19 @@ L'inventaire de votre déménagement</h1>
 <div className="text-carton">
 <div>
 
-<div className=" text-fomulaire">
-Listez vos meubles pièce par pièce.</div> 
-<div className=" text-fomulaire">
+<div className="text-fomulaire volumDetails">
+  <p> 
+Listez vos meubles pièce par pièce.
+</p>
+</div> 
+
+<div className="text-fomulaire volumDetails">
+<p>
 Attention, ne pas oublier de compter le cabanon de
  jardin, la cave, le garage, le grenier et les cartons
   d'objets posés sur les meubles ou par terre !
+
+</p>
   </div>
 </div>
 {/*<div className="img-carton">
@@ -139,66 +146,58 @@ Attention, ne pas oublier de compter le cabanon de
 </div>
 <div className=" btn-add-room" 
  onClick={addtoroom}>
-  Ajouter une piéce
+  <i class="fas fa-plus"></i> Ajouter une piéce
   </div>
   
 <div className="add-box">
-<select className="select-la-piece"  name="name" id="select" value={input.name} onChange={handelroom}>
-               <option value="">selectionner</option>
+<select className="select-la-piece" name="name" id="select" value={input.name} onChange={handelroom}>
+                <option value="chambre">Selectionner</option>
                 <option value="chambre">Chambre</option>
-                <option value="salon">salon</option>
-                <option value="Salle à manger">Salle à manger</option>
-                <option value="Salle de bain">Salle de bain</option>
-                <option value="WC">WC</option>
-                <option value="cuisine">cuisine</option>
-                <option value="Couloir">Couloir</option>
                 <option value="Jardin">Jardin</option>
-                <option value="Garage">Garage</option>
-                <option value="Cave">Cave</option>
-               
-                
-                
-                
-                
-               
-                
+                <option value="salon">Salon</option>
+                <option value="cuisine">Cuisine</option>
 </select>
 </div>
-<div className="text-fomulaire">
-  Les piéces selectionnées:
+<div className="text-fomulaire piecesTitle">
+  Les piéces selectionnées :
   </div>
 {room?.map((e)=>
 <div className="wrap-room">
  <div className="title-wrap-room">
-   <div style={{display:"flex"}}>
- <svg width="24" height="24" viewBox="0 0 24 24" color="#2c216f">
-   <path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z" /></svg> 
-  <div>{e.name}</div> 
-  </div>
-  <div><FaTrash className="trash-cubage" onClick={()=>remove(e)}/></div>  
-   
-   </div> 
-<select name="elem" value={e.tab.name} onChange={handelelem}  >
-                <option value="selectionner 0 30">selectionner</option>
-                <option value="table 1.5 30">table</option>
-                <option value="chaise 0.5 30" >chaise</option>
-                <option value="lit 2  30" >lit</option>
-                <option value="carton 0.75 30">carton livre</option>
-                <option value="carton 0.1 30">carton standard</option>
+ <svg width="24" height="24" viewBox="0 0 24 24" color="#2c216f"><path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z" /></svg> 
+   {e.name}</div> 
+<select name="elem" className="select-la-piece" value={e.tab} onChange={handelelem}  >
+                <option value="selectionner 0 30">Selectionner</option>
+                <option value="table 1.5 30">Table</option>
+                <option value="chaise 0.5 30" >Chaise</option>
+                <option value="lit 2  30" >Lit</option>
+                <option value="carton 0.75 30">Carton livre</option>
+                <option value="carton 1 30">Carton standard</option>
 </select>
   <div className="wrap-elems-room">
     <div className="btns-wrap-room">
       
-  <button  onClick={()=>addelem(e)} className="btn-add-room">Ajouter</button>
+  <button  onClick={()=>addelem(e)} className="btn-add-room btnMApAddRoom">  <i class="fas fa-plus"></i> Ajouter</button>
+ 
   </div>
       {e.tab?.map((p)=><div className="wrap-btns-cubage-elem">
       <div className="cubage-item-name" >
-<div>{p.name}</div>
-</div>
-      <button onClick={()=>qminus(p)}><FaMinus  className="cubage-icon"/></button>
+        
+{p.name}</div>
+      <button onClick={()=>qminus(p)} className="buttonCOntMinus">
+        -
+       {/* <FaMinus  className="cubage-icon"/>*/}
+      
+      
+      
+      </button>
       <div className="cubage-quantite">{p.quantite}</div>
-      <button  onClick={()=>qadd(e,p)}><FaPlus className="cubage-icon"/></button>
-      <div><FaTrash className="trash-cubage" onClick={()=>removeItem(e,p)}/></div>
+      <button  onClick={()=>qadd(e,p)} className="buttonCOntMinus">
+        +
+        {/*<FaPlus className="cubage-icon"/>*/}
+        
+        
+        </button>
   </div>)}
 
 

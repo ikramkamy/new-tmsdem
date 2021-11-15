@@ -20,31 +20,7 @@
   margin-right: 10px;
 }
 
-.calcul-bloc-all{
-  border: 1px hidden yellow; 
-  width: 100%;
-  
-}
-.calcul-bloc-item-all{
-  border: 1px hidden yellow; 
-  width: 100%;
-
-}
-.wrap-check-yes-no-all{
-  border: 1px hidden red;
-  width: 30%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-.wrap-formulaire-all{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.inter-calcul-item-all{
-  display: flex;
-  justify-content: center;
+.chrono-form div{
+margin : 10px;
+font-size: 1em;
 }

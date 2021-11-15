@@ -1,6 +1,6 @@
 *{
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
+ 
     font-weight: 500;
     font-size: 15px;
 }
@@ -16,6 +16,26 @@
     margin-top: 30px;
     border: 1px hidden red;
     
+}
+
+.cartonGeneralTitle {
+border: 1px hidden red;
+width: auto;
+margin-left: 25px;
+font-family: 'Roboto Slab', serif;
+font-weight: 400;
+overflow: hidden;
+}
+
+.text-fomulaire.volumDetails {
+    border: 1px hidden black;
+    font-size: 0.79em;
+}
+
+.text-fomulaire.volumDetails p{
+    margin-left: 18px;
+   
+    width: 420px;
 }
 .calcul-carton{
     display: flex;
@@ -57,15 +77,16 @@ font-size: 1.5em;
 }
 .Total-carton{
     background-color: rgb(243,243,243);
-    border: 1px solid lightgray;
+    border: 1px solid #e3e3e3;
     border-radius: 5px 5px 5px 5px;
-    width: 50%;
+    width: 300px;
     height: fit-content;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 30px;
 }
 .Total-carton h1{
     width: 100%;
@@ -77,6 +98,7 @@ font-size: 1.5em;
 .Total-carton h3{
     padding-left: 10px;
     padding-right: 10px;
+    color: #2C216F;
 }
 .Total-carton h4{
     font-size: 2.8em;
@@ -154,13 +176,24 @@ height: auto;
 }
 .select-la-piece{
     width: 80%;
+    height: 45px;
+  
+    margin-left: 18px;
+}
+
+
+.text-fomulaire.piecesTitle {
+    color: black;
+    border: 1px hidden black;
+    margin-top: 30px;
+    margin-left: 18px;
 }
 /***************************ROOM STYLING********************/
 .btn-add-room{
-    background-color:#2c216f;
-    color: white;
+
+    
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 5px 5px 5px 5px;
     cursor: pointer;
@@ -174,6 +207,9 @@ height: auto;
     margin-bottom: 30px;
     border: 1px solid lightgray;
     padding: 20px;
+    margin-top: 20px;
+    margin-left: 18px;
+
 }
 .wrap-elems-room{
    
@@ -186,8 +222,7 @@ height: auto;
 .title-wrap-room{
     width: 90%;
     display: flex;
-    justify-content:space-between;
-    border: 1px hidden red;
+    color: black;
 }
 .btns-wrap-room{
     display: flex;
@@ -203,10 +238,13 @@ height: auto;
 }
 .btn-add-room{
     width: 60%;
-    background-color: #ed1c24;
-    color: white;
     margin-bottom: 5px;
     margin-top: 15px;
+    height: 30px;
+}
+.fas.fa-plus {
+    margin-right: 10px;
+    color: #ed1c24;
 }
 .cubage-icon{
     background-color:#2c216f ;
@@ -233,16 +271,22 @@ background-color: transparent;
     font-size: 1.3em;
     width: 10%;
 }
-select{
 
-}
 .tail-volum-result{
     font-size: 18px;
 }
-.trash-cubage{
-    color: #ed1c24;
-    margin-left: 50px;
-    cursor: pointer;
-    font-size: 18px;
-    margin-bottom: 5px;
+
+
+
+.btns-wrap-room .btn-add-room.btnMApAddRoom {
+background-color: none;
+}
+
+
+.buttonCOntMinus{
+    border: 1px solid black;
+    height: 50px;
+    width: 30px;
+    font-size: 2em;
+    color: #2C216F;
 }

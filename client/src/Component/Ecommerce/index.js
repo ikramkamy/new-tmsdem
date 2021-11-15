@@ -214,31 +214,58 @@ const handeld1=()=>{
 }
 return(<div className="wrap-ecommerce">
 <h1 className="product-titles">Pour le non-fragile</h1>
-<h3 className="product-s-titles">Vêtements, livres, ustensiles de cuisine</h3>
+<h3 className="product-s-titles">*Vêtements, livres, ustensiles de cuisine</h3>
 <div className="carton-cathegorie-bloc">
 {produit.map((e)=>
+{
+  return(
 <Item add={()=>handelshow(e)} 
 url={e.url} name={e.name} prix={e.prix} 
 dimmension={e.dimmension} quantite={e.quantite} 
-description={e.description} plus={plus}  minus={()=>handelminus(e)}/>)}</div>
+description={e.description} plus={plus}  minus={()=>handelminus(e)}/>
+  )
+}
+)}
+
+</div>
 <div className="sepa-catégorie-cartons">
-<MDBInput type="checkbox" id="d" checked={d} onChange={handeld} className="check-box-e-commerce"/>
+<div style={{display:"flex"}}> 
+                                    <input  type="radio" label="selectoptioncarton"  id="d" value="Je souhaite que le démènagement emballe mes cartons non fragiles" name="rdB5" checked={d}/*checked={autoO}*/  onChange={handeld}/>
+                                    <label for="selectoptioncarton">Je souhaite que le démènagement emballe mes cartons non fragiles</label>
+                                    </div>
+                                
+
+
+{/*<MDBInput type="checkbox" id="d" checked={d} onChange={handeld} className="check-box-e-commerce"/>
+ 
+ 
+ 
  <div>Je souhaite que le démènagement emballe mes cartons non fragiles
-   
+ 
   </div> 
-  
+  */}
   </div>
 
 <h1 className="product-titles">Pour le fragile</h1>
-<h3 className="product-s-titles">Vaisselle, bouteilles, bibelots.</h3>
+<h3 className="product-s-titles">*Vaisselle, bouteilles, bibelots.</h3>
 <div className="carton-cathegorie-bloc">{produit2.map((e)=><Item 
 add={()=>handelshow(e)} url={e.url} name={e.name} prix={e.prix} 
 minus={()=>handelminus(e)}
 dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}</div>
 <div className="sepa-catégorie-cartons">
-<MDBInput type="checkbox" id="d1" checked={d1} onChange={handeld1} className="check-box-e-commerce"/>
-  <div>Je souhaite que le démènageur emballe mes cartons fragiles </div>
-  
+
+<div style={{display:"flex"}}> 
+                                    <input  type="radio" label="selectoptioncarton1"  id="d1" value="Je souhaite que le démènageur emballe mes cartons fragiles " name="rdB5" checked={d}/*checked={autoO}*/  onChange={handeld1}/>
+                                    <label for="selectoptioncarton1">Je souhaite que le démènageur emballe mes cartons fragiles </label>
+                                    </div>
+
+
+{/*<MDBInput type="checkbox" id="d1" checked={d1} onChange={handeld1} className="check-box-e-commerce"/>
+ 
+ 
+ 
+  <div>Je souhaite que le démènageur emballe mes cartons fragiles </div>*/
+}
   </div>
 
 

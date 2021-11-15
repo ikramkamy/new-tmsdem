@@ -48,7 +48,7 @@ export default function Service() {
                             ou d’un camion pour
                             transporter vos affaires ?  </p></div>
 
-                        <div className="buttoncontainer soto">
+                        <div className="buttoncontainer soto organise">
                             
                      <button><Link to="/chrono">J'organise mon déménagement</Link> </button></div>
                     </div>
@@ -155,7 +155,9 @@ Vous pouvez toutefois louer nos  monte-meubles dans le cas d’un usage personne
                 </div>
                 <div className="actionContainerItem buttonShop">
 
+               
                     <button ><Link to="/e-commerce">SHOP</Link> </button>
+                
                 </div>
             </div>
 

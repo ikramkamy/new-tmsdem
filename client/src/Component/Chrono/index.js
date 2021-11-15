@@ -244,19 +244,37 @@ const sendPrixcarton=(data)=>{
 
 <div style={{width:"80%"}}>
 <div className="text-calcul">
-<h1>Votre projet de déménagement</h1>
-<div className="text-fomulaire">
-    La formule chrono<br/>
-Choisissez maintenant vos options. 
-Votre devis se recalcule automatiquement.</div>
+<h1 style={{fontSize:"5.3em", color:"#2C216F", overflow:"hidden"} }>Formule Chrono</h1>
+<div className="text-fomulaire" >
+  
+Choisissez vos options et votre devis se recalcule automatiquement.</div>
+
 </div>
 </div>
 <div className="les-champs-de-calcul chrono-form">
 <div className="wrap-formulaire">
 <div className="calcul-bloc">
 <div className="check-box-principl">
+
+<div style={{display:"flex"}}> 
+                                    <input  type="radio" label="4 h" id="f1" value="4 h" name="rdB8" checked={form4}  /*checked={autoO}*/ onChange={handelform4} />
+                                    <label for="4 h"> 4 h</label>
+                                    </div>
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="7 h" id="f2" value="7 h" name="rdB8" checked={form7}  /*checked={autoO}*/ onChange={handelform7} />
+                                    <label for="7 h"> 7 h</label>
+                                    </div>
+
+{/*
 <MDBInput label="4 h" type="checkbox" id="f1" checked={form4} onChange={handelform4}/>
-<MDBInput label="7 h" type="checkbox" id="f2" checked={form7} onChange={handelform7}/> 
+<MDBInput label="7 h" type="checkbox" id="f2" checked={form7} onChange={handelform7}/> */}
+
+
+
+
+
 </div>
 
 
@@ -264,10 +282,40 @@ Votre devis se recalcule automatiquement.</div>
 
 {form4 && (
 <div className="chrono-form">
-<div className="mdbinput">
-<MDBInput label="une personne + un camion" type="checkbox" id="form41" checked={form41} onChange={handelform41}/>
-</div>
-<div className="mdbinput">
+
+
+<div style={{display:"flex"}}> 
+                                    <input  type="radio" label="une personne + un camion" id="form41" value="une personne + un camion" name="rdB9" checked={form41}  /*checked={autoO}*/ onChange={handelform41} />
+                                    <label for="une personne + un camion"> 1 personne  +  un camion</label>
+                                    </div>
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="2 personnes + un camion" id="form42" value="2 personnes + un camion" name="rdB9" checked={form42}  /*checked={autoO}*/ onChange={handelform42} />
+                                    <label for="2 personnes + un camion"> 2 personnes + un camion</label>
+                                    </div>
+
+
+        
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="3 personnes + un camion" id="form43" value="3 personnes + un camion" name="rdB9" checked={form43}  /*checked={autoO}*/ onChange={handelform43} />
+                                    <label for="3 personnes + un camion"> 3 personnes + un camion</label>
+                                    </div>
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="4 personnes + un camion" id="form44" value="4 personnes + un camion" name="rdB9" checked={form44}  /*checked={autoO}*/ onChange={handelform44} />
+                                    <label for="4 personnes + un camion"> 4 personnes + un camion</label>
+                                    </div>
+
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="un camion additionnel" id="form42" value="Un camion additionnel" name="rdB9" checked={form45}  /*checked={autoO}*/ onChange={handelform45} />
+                                    <label for="un camion additionnel">1 camion additionnel</label>
+                                    </div>
+{/*<MDBInput label="une personne + un camion" type="checkbox" id="form41" checked={form41} onChange={handelform41}/>
 <MDBInput label="2 personnes + un camion" type="checkbox" id="form42" checked={form42} onChange={handelform42}/>
 </div>
 
@@ -279,14 +327,55 @@ Votre devis se recalcule automatiquement.</div>
 </div>
 <div className="mdbinput">
 <MDBInput label="un camion additionnel" type="checkbox" id="form45" checked={form45} onChange={handelform45}/>
-</div>
+
+*/}
+
+
+
+
+
+
 </div>)}
 
 {form7 &&(<div className="chrono-form">
-<div className="mdbinput">
-<MDBInput label="une personne + un camion" type="checkbox" id="form71" checked={form71} onChange={handelform71}/>
-  </div>
-  <div className="mdbinput">
+
+
+<div style={{display:"flex"}}> 
+                                    <input  type="radio" label=" 1 personne + un camion" id="form71" value="1 personne + un camion" name="rdB10" checked={form71}  /*checked={autoO}*/ onChange={handelform71} />
+                                    <label for="1 personne + un camion"> 1 personne + un camion</label>
+                                    </div>
+
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="2 personnes + un camion" id="form72" value="2 personnes + un camion" name="rdB10" checked={form72}  /*checked={autoO}*/ onChange={handelform72} />
+                                    <label for=" 2 personnes + un camion"> 2 personnes + un camion</label>
+                                    </div>
+
+
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label=" 3 personnes + un camion" id="form73" value="3 personnes + un camion" name="rdB10" checked={form73}  /*checked={autoO}*/ onChange={handelform73} />
+                                    <label for=" 3 personnes + un camion"> 3 personnes + un camion</label>
+                                    </div>
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="4 personnes + un camion" id="form74" value="4 personnes + un camion" name="rdB10" checked={form74}  /*checked={autoO}*/ onChange={handelform74} />
+                                    <label for=" 4 personnes + un camion"> 4 personnes + un camion</label>
+                                    </div>
+
+
+
+                                    <div style={{display:"flex"}}> 
+                                    <input  type="radio" label="un camion additionnel" id="form75" value="Un camion additionnel" name="rdB10" checked={form75}  /*checked={autoO}*/ onChange={handelform75} />
+                                    <label for="un camion additionnel">1 camion additionnel</label>
+                                    </div>
+
+
+
+{  /*<MDBInput label="une personne + un camion" type="checkbox" id="form71" checked={form71} onChange={handelform71}/>
 <MDBInput label="2 personnes + un camion" type="checkbox" id="form72" checked={form72} onChange={handelform72}/>
 </div>
 <div className="mdbinput">
@@ -294,10 +383,12 @@ Votre devis se recalcule automatiquement.</div>
 </div>
 <div className="mdbinput">
 <MDBInput label="4 personnes + un camion" type="checkbox" id="form74" checked={form74} onChange={handelform74}/>
-</div>
-<div className="mdbinput">
-<MDBInput label="un camion additionnel" type="checkbox" id="form75" checked={form75} onChange={handelform75}/>
-</div>
+<MDBInput label="un camion additionnel" type="checkbox" id="form75" checked={form75} onChange={handelform75}/>*/}
+
+
+
+
+
 </div>)
 }
 
@@ -331,10 +422,10 @@ Avez-vous besoin de fournitures pour votre déménagement?
 
 
 
-<div className="calcul-montant"><p>DÉMÉNAGEMENT<br/></p>
+<div className="calcul-montant"  style={{border: "1px hidden red", background:"rgba(44,33,111,0.1)", color:"rgb(44,33,111)"}}><p>DÉMÉNAGEMENT<br/></p>
 
-<div className="total-formulaire">
-    <div>Total: {total} €</div>
+<div className="total-formulaire" style={{border:"none"}}>
+    <div style={{fontSize:"1.3em", fontWeight:"600", color:"rgb(44,33,111)", border:"none", fontSize:"1.77em", marginTop:"-20px"}}>Total: {total} €</div>
 
 </div> 
 
