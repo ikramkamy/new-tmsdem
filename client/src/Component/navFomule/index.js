@@ -26,16 +26,23 @@ return(<div className="wrap-nav">
     <i class="fas fa-arrow-left"></i><div> Retour accueil </div>
     </div> 
  </div>
+
+ <Link to="/soto"  style={{textDecoration:"none"}}>
 <div className="nav-form-item">
 <div className="nav-inter-item"> 
     <div className="circle">1</div>Formule Soto</div>
     </div>
+</Link>
 
+
+ <Link to="/chrono" style={{textDecoration:"none"}}>
 <div className="nav-form-item">
+   
 <div className="nav-inter-item">
-    <div className="circle">2</div>Formule chrono</div>
+   <div className="circle">2</div>
+   Formule chrono</div> 
 </div>
-
+</Link>
 
  {/* <div className="nav-form-item speration"></div> */}
 

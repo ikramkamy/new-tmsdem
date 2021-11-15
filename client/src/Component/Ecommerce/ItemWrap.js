@@ -6,8 +6,8 @@ const Item=(props)=>{
  const {add,minus}=props; 
 return(<div className="wrap-Item">
 <div><img src={props.url} className="image-carton" style={{height:"100px", width:"100px" }}/></div>
-<div className="Item-Ecommerce">{props.name}</div>
-<div className="Item-Ecommerce">{props.dimmension}</div>
+<div className="Item-Ecommerce" style={{fontWeight: "800", color : "#2C216F"}}>{props.name}</div>
+<div className="Item-Ecommerce" style={{marginTop :"-20px" }}>{props.dimmension}</div>
 <div className=" description-carton">{props.description}</div>
 
 <div className="Item-Ecommerce quantite">

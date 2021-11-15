@@ -1,0 +1,74 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+  
+}
+
+
+.pdf-stylig{
+    position: fixed;
+    top:0px;
+    z-index: 2;
+   width: 100%;
+    height:fit-content;
+    border: 1px hidden red;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-inventaier{
+    background-color: #2c216f;
+    color: white;
+    font-size: 24px;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.wrap-pdf{
+    width: 100%;
+    border: 1px hidden red;
+    /*padding: 20px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inevnt-item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    border-bottom: 1px solid lightgray;
+    
+}
+.btn-download{
+    width: 30%;
+    margin-bottom: 30px;
+}
+.wrap-pdf-stylig{
+    width: 80%;
+}
+.invent-title{
+    background-color:white;
+    width: 70%;
+    color: #2c216f;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+   display: flex;
+   justify-content: space-between;
+   border: 1px hidden red;
+}
+.invent-item{
+    border: 1px hidden red;
+   
+}
+.invent-inter{
+    width: 50%;
+}
+.principale-titles-pdf{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

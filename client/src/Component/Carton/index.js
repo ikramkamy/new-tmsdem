@@ -70,10 +70,13 @@ const qadd=(e,p)=>{
   console.log("la quantité",p.quantite)
   console.log("le volume",p.volume)
   setSommevol(sommevol+Number(p.volume));
-  handelCubage(sommevol)
+ 
   forceUpdate();
 }
-
+useEffect(()=>{
+  handelCubage(sommevol)
+  
+},[(sommevol)])
 //console.log("le volume total",sommevol);
 /************************************ADD MINUS ELEM CUBAGE******************************/
 const [q,setQ]=useState(0);
@@ -83,7 +86,7 @@ if(p.quantite==0){
 }else{
   p.quantite=Number(p.quantite)-1;
   setSommevol(sommevol-Number(p.volume));
-  //handelCubage(sommevol)
+  handelCubage(sommevol)
   forceUpdate();
 }}
 /*************************************LA SOMME DES VOLUMES*****************************/
@@ -94,56 +97,87 @@ useEffect(()=>{
 */
 return(
 <div className="carton">
+<h1 className="cartonGeneralTitle" style={{fontSize:"24px"}}>
+L'inventaire de votre déménagement</h1>
+<div className="wrap-carton-elemnt">
 <div className="calcul-carton">
-<div className="text-carton">
-  <div>
-<h1>L'inventaire de votre déménagement</h1>
-<p>Listez vos meubles pièce par pièce.</p>
 
-<h4>Attention, ne pas oublier de compter le cabanon de jardin, la cave, le garage, le grenier et les cartons d'objets posés sur les meubles ou par terre !</h4>
+<div className="text-carton">
+<div>
+
+<div className="text-fomulaire volumDetails">
+  <p> 
+Listez vos meubles pièce par pièce.
+</p>
+</div> 
+
+<div className="text-fomulaire volumDetails">
+<p>
+Attention, ne pas oublier de compter le cabanon de
+ jardin, la cave, le garage, le grenier et les cartons
+  d'objets posés sur les meubles ou par terre !
+
+</p>
+  </div>
 </div>
 {/*<div className="img-carton">
 <img src="/images/carton.png" className="img-carton-size"/>
 </div>*/}
 
 </div>
-<div className=" btn-add-room"  onClick={addtoroom}>Ajouter une piéce</div>
+<div className=" btn-add-room" 
+ onClick={addtoroom}>
+  <i class="fas fa-plus"></i> Ajouter une piéce
+  </div>
 <div className="add-box">
 <select className="select-la-piece" name="name" id="select" value={input.name} onChange={handelroom}>
-                <option value="chambre">selectionner</option>
-                <option value="chambre ">Chambre</option>
-                <option value="Jardin" >Jardin</option>
-                <option value="salon" >salon</option>
-                <option value="cuisine">cuisine</option>
+                <option value="chambre">Selectionner</option>
+                <option value="chambre">Chambre</option>
+                <option value="Jardin">Jardin</option>
+                <option value="salon">Salon</option>
+                <option value="cuisine">Cuisine</option>
 </select>
 </div>
-<h2>Les piéces selectionnées:</h2>
+<div className="text-fomulaire piecesTitle">
+  Les piéces selectionnées :
+  </div>
 {room?.map((e)=>
 <div className="wrap-room">
  <div className="title-wrap-room">
  <svg width="24" height="24" viewBox="0 0 24 24" color="#2c216f"><path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z" /></svg> 
    {e.name}</div> 
-<select name="elem" value={e.tab} onChange={handelelem}  >
-                <option value="selectionner 0 30">selectionner</option>
-                <option value="table 1.5 30">table</option>
-                <option value="chaise 0.5 30" >chaise</option>
-                <option value="lit 2  30" >lit</option>
-                <option value="carton 0.75 30">carton livre</option>
-                <option value="carton 1 30">carton standard</option>
+<select name="elem" className="select-la-piece" value={e.tab} onChange={handelelem}  >
+                <option value="selectionner 0 30">Selectionner</option>
+                <option value="table 1.5 30">Table</option>
+                <option value="chaise 0.5 30" >Chaise</option>
+                <option value="lit 2  30" >Lit</option>
+                <option value="carton 0.75 30">Carton livre</option>
+                <option value="carton 1 30">Carton standard</option>
 </select>
   <div className="wrap-elems-room">
     <div className="btns-wrap-room">
       
-  <button  onClick={()=>addelem(e)} className="btn-add-room">Ajouter</button>
+  <button  onClick={()=>addelem(e)} className="btn-add-room btnMApAddRoom">  <i class="fas fa-plus"></i> Ajouter</button>
  
   </div>
       {e.tab?.map((p)=><div className="wrap-btns-cubage-elem">
       <div className="cubage-item-name" >
         
 {p.name}</div>
-      <button onClick={()=>qminus(p)}><FaMinus  className="cubage-icon"/></button>
+      <button onClick={()=>qminus(p)} className="buttonCOntMinus">
+        -
+       {/* <FaMinus  className="cubage-icon"/>*/}
+      
+      
+      
+      </button>
       <div className="cubage-quantite">{p.quantite}</div>
-      <button  onClick={()=>qadd(e,p)}><FaPlus className="cubage-icon"/></button>
+      <button  onClick={()=>qadd(e,p)} className="buttonCOntMinus">
+        +
+        {/*<FaPlus className="cubage-icon"/>*/}
+        
+        
+        </button>
   </div>)}
 
 
@@ -154,16 +188,17 @@ return(
 </div>
 
 <div className="Total-carton">
-<h1>Calcul du volume total</h1>
-<div className="resultat-volume">
 
-</div>
-<h3>Le volume total:</h3>
-<h3>{sommevol}m3</h3>
-<div className="btn-carton">Continue</div>
-<div className="btn-carton" >Retour</div>
-</div>
 
+<div className="tail-volum-result">
+  Le volume total:
+  </div>
+<h3 style={{fontWeight:"600"}}>{sommevol}m<sup>3</sup></h3>
+
+{/*<div className="btn-carton">Continue</div>
+<div className="btn-carton" >Retour</div>*/}
+</div>
+</div>
     </div>)
 }
 export default Carton;

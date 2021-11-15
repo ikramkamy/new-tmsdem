@@ -1,22 +1,55 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+ 
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
 .carton{
     height: auto;
     width: 100%;
     background-color: white;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin-top: 30px;
+    border: 1px hidden red;
+    
+}
+
+.cartonGeneralTitle {
+border: 1px hidden red;
+width: auto;
+margin-left: 25px;
+font-family: 'Roboto Slab', serif;
+font-weight: 400;
+overflow: hidden;
+}
+
+.text-fomulaire.volumDetails {
+    border: 1px hidden black;
+    font-size: 0.79em;
+}
+
+.text-fomulaire.volumDetails p{
+    margin-left: 18px;
+   
+    width: 420px;
 }
 .calcul-carton{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     padding: 10px;
-   
+}
+.wrap-carton-elemnt{
+    display: flex;
 }
 .img-carton-size{
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 }
 .img-carton{
     width: fit-content;
@@ -24,19 +57,19 @@
 .text-carton{
     display: flex;
     width: 100%;
+    border: 1px hidden red;
+    margin-top: 23px;
 }
 .text-carton h1{
-font-size: 1.1em;
+font-size: 1.5em;
 }
 .text-carton p{
     font-size: 1.3em; 
-    font-weight: 200; 
     margin-top: 10px;
 }
 .text-carton h4
 {
-    font-size: 12px; 
-    font-weight: 600; 
+    font-size: 1.2em; 
     margin-top: 50px; 
 }
 .margin-top{
@@ -44,15 +77,16 @@ font-size: 1.1em;
 }
 .Total-carton{
     background-color: rgb(243,243,243);
-    border: 1px solid lightgray;
+    border: 1px solid #e3e3e3;
     border-radius: 5px 5px 5px 5px;
-    width: 50%;
+    width: 300px;
     height: fit-content;
-    margin-top: 10px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 30px;
 }
 .Total-carton h1{
     width: 100%;
@@ -64,6 +98,7 @@ font-size: 1.1em;
 .Total-carton h3{
     padding-left: 10px;
     padding-right: 10px;
+    color: #2C216F;
 }
 .Total-carton h4{
     font-size: 2.8em;
@@ -121,16 +156,11 @@ width: 80%;
     border: 1px solid red;
 }
 .select-inter-piéce{
-
 width: 80%;
 margin-bottom: 10px;
-
-
 }
 .add-box{
-    
-    height: auto;
-   
+height: auto;
 }
 .icon-colum-item{
   color: #2c216f;  
@@ -143,18 +173,27 @@ margin-bottom: 10px;
     border: 1px solid blue;
     margin-bottom: 10px;
     margin-top: 10px;
-    
 }
 .select-la-piece{
     width: 80%;
+    height: 45px;
+  
+    margin-left: 18px;
 }
 
+
+.text-fomulaire.piecesTitle {
+    color: black;
+    border: 1px hidden black;
+    margin-top: 30px;
+    margin-left: 18px;
+}
 /***************************ROOM STYLING********************/
 .btn-add-room{
-    background-color:#2c216f;
-    color: white;
+
+    
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 5px 5px 5px 5px;
     cursor: pointer;
@@ -168,8 +207,10 @@ margin-bottom: 10px;
     margin-bottom: 30px;
     border: 1px solid lightgray;
     padding: 20px;
-}
+    margin-top: 20px;
+    margin-left: 18px;
 
+}
 .wrap-elems-room{
    
     width: 90%;
@@ -181,6 +222,7 @@ margin-bottom: 10px;
 .title-wrap-room{
     width: 90%;
     display: flex;
+    color: black;
 }
 .btns-wrap-room{
     display: flex;
@@ -195,10 +237,13 @@ margin-bottom: 10px;
 }
 .btn-add-room{
     width: 60%;
-    background-color: #ed1c24;
-    color: white;
     margin-bottom: 5px;
     margin-top: 15px;
+    height: 30px;
+}
+.fas.fa-plus {
+    margin-right: 10px;
+    color: #ed1c24;
 }
 .cubage-icon{
     background-color:#2c216f ;
@@ -213,7 +258,6 @@ border: none;
 background-color: transparent;
 }
 .cubage-item-name{
-   
     width: 30%;
     display: flex;
     justify-content: center;
@@ -226,6 +270,22 @@ background-color: transparent;
     font-size: 1.3em;
     width: 10%;
 }
-select{
 
+.tail-volum-result{
+    font-size: 18px;
+}
+
+
+
+.btns-wrap-room .btn-add-room.btnMApAddRoom {
+background-color: none;
+}
+
+
+.buttonCOntMinus{
+    border: 1px solid black;
+    height: 50px;
+    width: 30px;
+    font-size: 2em;
+    color: #2C216F;
 }

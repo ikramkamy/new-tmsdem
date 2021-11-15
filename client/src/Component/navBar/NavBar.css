@@ -158,7 +158,13 @@ color: white;
     border-radius: 10px;
     background-color: #ED1C24;
 }
-
+.btn-devis a{
+text-decoration: none;
+color: white;
+}
+.btn-devis a:hover{
+color: white;
+}
 .btn-devis button {
     border: none;
     background-color: transparent;

@@ -63,3 +63,137 @@ top: 0;
   background-color: #ed1c24;
  
 }
+
+
+
+.originalBoutiquePage{
+  border: 1px hidden black;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+
+.originalBoutiquePage .originalBoutiqueContainer{
+border: 1px hidden lightgray;
+height:auto;
+width: 900px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background-color: white;
+}
+
+
+ 
+.originalBoutiquePage .originalBoutiqueContainer .ecommComponent{
+  border: 1px solid red;
+  height: auto;
+  width: 100%;
+}
+
+.originalBoutiquePage .originalBoutiqueContainer .boutTitle{
+  font-size: 4em;
+margin-top: 50px;
+color: #2C216F;
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+}
+
+
+.alertBoxBoutique{
+  border: 1px hidden black;
+  height: 250px;
+  width: 500px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+background-color: #2b3990;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.alertBoxBoutiqueContents{
+  border: 1px solid white;
+  height: 230px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2b3990;
+  position: relative;
+}
+
+.closeButtonAlertBox{
+  border : 1px hidden white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.alertBoxBoutiqueContents h4, .alertBoxBoutiqueContents h5{
+  color: white;
+}
+
+.alertBoxBoutiqueContents h5{
+font-size: 2.1em;
+}
+
+.buttonGroupeBoutiqueAlert{
+  border: 1px hidden white;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 4px;
+}
+
+
+.contentArrow{
+  border: 1px hidden white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.contentArrow img{
+  margin: 5px;
+  height: 60px;
+  width: 60px;
+  animation-name: updown;
+  animation-duration: 1s;
+  color: #ED1C24;
+}
+
+@keyframes updown {
+  from {margin-top: -4px;}
+  to {margin-top: 4px}
+}
+
+
+.buttonGroupeBoutiqueAlert button {
+  border: 1px hidden white;
+  width: 140px;
+  height: 50px;
+
+  background-color: white;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1.1em;
+  font-family: 'Montserrat', sans-serif;
+ 
+}

@@ -35,7 +35,8 @@ export default function Service() {
                             sans vous  préoccuper
                             du process ? </p></div>
 
-                        <div className="buttoncontainer  soto"> <button><Link to="soto">laissez-nous faire</Link> </button></div>
+                        <div className="buttoncontainer  soto">
+                        <button><Link to="soto">laissez-nous faire</Link> </button></div>
                     </div>
 
 
@@ -47,7 +48,9 @@ export default function Service() {
                             ou d’un camion pour
                             transporter vos affaires ?  </p></div>
 
-                        <div className="buttoncontainer"> <button> J'organise mon déménagement</button></div>
+                        <div className="buttoncontainer soto organise">
+                            
+                     <button><Link to="/chrono">J'organise mon déménagement</Link> </button></div>
                     </div>
                     <div className="serviceItem">
 
@@ -58,7 +61,8 @@ export default function Service() {
                             ou d’un camion pour
                             transporter vos affaires ?  </p></div>
 
-                        <div className="buttoncontainer stock"> <button> Je stock <section className="sectionTitleStockService">chez vous </section></button></div>
+                        <div className="buttoncontainer stock">
+                     <button> Je stock <section className="sectionTitleStockService">chez vous </section></button></div>
                     </div>
                 </div>
             </div>
@@ -151,7 +155,9 @@ Vous pouvez toutefois louer nos  monte-meubles dans le cas d’un usage personne
                 </div>
                 <div className="actionContainerItem buttonShop">
 
-                    <button> SHOP</button>
+               
+                    <button ><Link to="/e-commerce">SHOP</Link> </button>
+                
                 </div>
             </div>
 

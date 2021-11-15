@@ -1,3 +1,6 @@
+*{
+    font-family: 'Roboto Slab', serif;
+}
 .wrap-ecommerce{
     width: 100%;
     display: flex;
@@ -8,13 +11,23 @@
 .carton-cathegorie-bloc{
     display: flex;
     margin-bottom: 10px;
+    margin-top: 40px;
 }
 .product-titles{
     margin-bottom: 20px;
-    width: 80%;
-    
-    font-size: 1.3em;
-    font-weight: 300;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1.5em;
+    font-weight: 500;
+ border: 1px hidden black;
+ margin-left:30px;
+ font-weight: 500;
+}
+.product-s-titles{
+    font-size: 16px;
+    font-weight: 400; 
+    width: 100%;
+    margin-left:30px;
 }
 .carton-cathegorie-bloc{
     width: 80%;
@@ -23,12 +36,19 @@
     display: flex;
     flex-wrap: wrap;
 }
+#d1 ,#d{
+    border-radius:50%;
+    height:20px;
+    width:20px;
+    color: #2c216f;
+    margin-right: 10px;
+}
 /*****************************************ITEM E COMMERCE*****************************************/
 
 .wrap-Item{
     height: 350px;
-    width: 200px;
-    border: 1px solid lightgrey;
+    width: 230px;
+    border: 1px solid lightgray;
     border-radius: 10px 10px 10px 10px ;
     display: flex;
     justify-content: space-between;
@@ -39,7 +59,7 @@
 }
 .wrap-Item:hover
 .description-carton{
-
+color: #ED1C24;
 display: flex;
 }
 .wrap-Item:hover .image-carton{
@@ -57,6 +77,8 @@ display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 1.2em;
+    font-family: 'Roboto Slab', serif;
 }
 .marge{
     margin: 15px;
@@ -73,8 +95,8 @@ display: none;
    
 }
 .quantite:hover
-    .Item-Icons, .wrap-quantite{
-    color: black;
+    .Item-Icons{
+    color: white;
 
     }
 .quantite:hover{
@@ -85,8 +107,6 @@ display: none;
 font-size: 1em;
 cursor: pointer;
 font-weight: 600;
-
-
 }
 .wrap-icon-item{
     border: 2px solid white;
@@ -168,5 +188,12 @@ font-weight: 600;
     align-items: center;
     
 }
-
-
+/************************seperations*******************************/
+.sepa-catégorie-cartons{
+    display: flex;
+    margin-bottom: 20px;
+    width: 95%;
+}
+.check-box-e-commerce{
+    margin-right: 20px;
+}

@@ -11,7 +11,29 @@ import NavBar from './Component/navBar/NavBar'
 import Presentation from './Component/Presentation';
 import Service from './Component/Service';
 import Footer from './Component/footer/Footer';
+import Contactus from './Component/Contact';
+import Pdfinvent from './Component/Pdfinventaire';
+import Chrono from './Component/Chrono';
+import Comp from '../src/images/Comp 1.gif'
+
 function App() {
+
+  const [showAlertBox, setShowAlertBox] = useState(false)
+  const showAlert = () => {
+    setShowAlertBox(!showAlertBox)
+  }
+
+
+useEffect(() => {
+
+  setTimeout(() => {
+    showAlert() 
+  },2000);
+
+
+
+}, [])
+
   const sendPrixcarton=(data)=>{
     console.log("cart")
 }
@@ -33,12 +55,58 @@ function App() {
    </Route>
   
 <Route exact path="/e-commerce">
-<NavBar/>
+  <NavBar/>
   <Ecommerce  sendPrixcarton={sendPrixcarton} />
 <Footer/>
 
    </Route>
   
+
+
+   <Route  path="/boutique">
+  <NavBar/>
+  <div className="originalBoutiquePage"> 
+  <div className="originalBoutiqueContainer"> 
+
+ <h1 className="boutTitle"> Notre Boutique </h1>
+ 
+  <Ecommerce  sendPrixcarton={sendPrixcarton}  className="ecommComponent" Style={{border : "1px solid red"}} />
+  
+  </div>
+
+{
+
+showAlertBox && <div className="alertBoxBoutique">
+  <div className="alertBoxBoutiqueContents">
+    <div className="closeButtonAlertBox" onClick={() => setShowAlertBox(false)}> X </div>
+    <div>  <h4> Vous envisagez de déménager ? </h4></div>
+    <div> <h5> Découvrez nos services </h5></div>
+<div className="contentArrow"> 
+<div> 
+ <img src={Comp} />
+ </div>
+  </div>
+    <div className="buttonGroupeBoutiqueAlert">
+<div> <button> Soto</button> </div>
+<div> <button> Chrono</button>  </div>
+<div> <button> Stock</button>  </div>
+      </div>
+    </div>
+    </div>
+
+}
+ 
+
+
+
+  </div>
+<Footer/>
+
+   </Route>
+
+
+
+
    <Route exact path="/services" >
    <NavBar/>
      <Service/>
@@ -48,12 +116,25 @@ function App() {
    <NavFomule/>
      <Formulefinale/>
    </Route>
+<Route exact path="/chrono">
+<NavFomule/>
+<Chrono/>
+
+</Route>
 
    <Route exact path="/presentation" >
    <NavBar/>
      <Presentation/>
   
 </Route>
+
+<Route exact path="/contact">
+<NavBar/>
+  <Contactus/>
+  <Footer/>
+</Route>
+
+<Route exact path="/pdf"><Pdfinvent/></Route>
    </Switch>
    
    

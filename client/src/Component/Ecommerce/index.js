@@ -3,9 +3,11 @@ import  './e-commerce.css';
 import { FaArrowCircleLeft, FaLock, FaMinus, FaPlus, FaTrash} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Item from './ItemWrap';
+import  {MDBInput}  from 'mdbreact';
 const Ecommerce=(props)=>{
 const{sendPrixcarton}=props;
 const[prixcarton,setPrixcarton]=useState(0);
+const [increment,setIncrement]=useState();
 const[produit,setProduit]=useState([
 {name:"carton livre",
 prix:"20 £",
@@ -24,8 +26,7 @@ description:"10 à 20 par pièce"
 },
 
   ])
-  
-  const[produit2,setProduit2]=useState([
+const[produit2,setProduit2]=useState([
     {
       url:"/images/cartonstandard.jpg",
       name:"Carton renforcéCarton renforcé",
@@ -103,11 +104,7 @@ const[produit3,setProduit3]=useState([
     },
 
   ])
-  
-  
-  
-
- const[produit4,setProduit4]=useState([
+const[produit4,setProduit4]=useState([
   {
   url:"/images/rouloadhesif.jpg",
   name:"Rouleau adhésif",
@@ -155,15 +152,17 @@ const handelshow=(e)=>{
   //setShow(true);
   e.quantite=e.quantite+1
   setPrixcarton(prixcarton+Number(e.prix.split(" ")[0]))
+  console.log("ptix total",prixcarton)
+  setIncrement(increment+1)
 }
 const handelminus=(e)=>{
   if(e.quantite==0){
     alert("la quantité est 0")
   }else{ 
-    
-    //setShow(true);
+  //setShow(true);
     e.quantite=e.quantite-1
     setPrixcarton(prixcarton-Number(e.prix.split(" ")[0]))
+    setIncrement(increment+1)
   }
  
 }
@@ -172,7 +171,7 @@ useEffect(()=>{
   sendPrixcarton(prixcarton);
   console.log("prixcarton",prixcarton)
 
-})
+},[prixcarton])
 console.log("CART",cart);
 const [quantite,setQuantite]=useState(0)
 const plus=()=>{
@@ -180,29 +179,83 @@ const plus=()=>{
 }
 
 /********************************************La somme des cartons****************************************/
+
+/*****************************Chekbox For Ecommerce**************************************** */
+const[d,setD]=useState(false);
+const handeld=()=>{
+  setD(!d) 
+}
+const[d1,setD1]=useState(false);
+const handeld1=()=>{
+  setD1(!d1) 
+}
 return(<div className="wrap-ecommerce">
 <h1 className="product-titles">Pour le non-fragile</h1>
-<h3 className="product-titles">Vêtements, livres, ustensiles de cuisine</h3>
+<h3 className="product-s-titles">*Vêtements, livres, ustensiles de cuisine</h3>
 <div className="carton-cathegorie-bloc">
 {produit.map((e)=>
+{
+  return(
 <Item add={()=>handelshow(e)} 
 url={e.url} name={e.name} prix={e.prix} 
 dimmension={e.dimmension} quantite={e.quantite} 
-description={e.description} plus={plus}  minus={()=>handelminus(e)}/>)}</div>
-<div className="sepa-catégorie-cartons">JE SOUHAITE QUE LE DÉMÉNAGEUR EMBALLE MES CARTONS NON FRAGILES</div>
+description={e.description} plus={plus}  minus={()=>handelminus(e)}/>
+  )
+}
+)}
+
+</div>
+<div className="sepa-catégorie-cartons">
+<div style={{display:"flex"}}> 
+                                    <input  type="radio" label="selectoptioncarton"  id="d" value="Je souhaite que le démènagement emballe mes cartons non fragiles" name="rdB5" checked={d}/*checked={autoO}*/  onChange={handeld}/>
+                                    <label for="selectoptioncarton">Je souhaite que le démènagement emballe mes cartons non fragiles</label>
+                                    </div>
+                                
+
+
+{/*<MDBInput type="checkbox" id="d" checked={d} onChange={handeld} className="check-box-e-commerce"/>
+ 
+ 
+ 
+ <div>Je souhaite que le démènagement emballe mes cartons non fragiles
+ 
+  </div> 
+  */}
+  </div>
 
 <h1 className="product-titles">Pour le fragile</h1>
-<h3 className="product-titles">Vaisselle, bouteilles, bibelots.</h3>
-<div className="carton-cathegorie-bloc">{produit2.map((e)=><Item add={()=>handelshow(e)} url={e.url} name={e.name} prix={e.prix} dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}</div>
-<div className="sepa-catégorie-cartons">JE SOUHAITE QUE LE DÉMÉNAGEUR EMBALLE MES CARTONS FRAGILES</div>
+<h3 className="product-s-titles">*Vaisselle, bouteilles, bibelots.</h3>
+<div className="carton-cathegorie-bloc">{produit2.map((e)=><Item 
+add={()=>handelshow(e)} url={e.url} name={e.name} prix={e.prix} 
+minus={()=>handelminus(e)}
+dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}</div>
+<div className="sepa-catégorie-cartons">
+
+<div style={{display:"flex"}}> 
+                                    <input  type="radio" label="selectoptioncarton1"  id="d1" value="Je souhaite que le démènageur emballe mes cartons fragiles " name="rdB5" checked={d}/*checked={autoO}*/  onChange={handeld1}/>
+                                    <label for="selectoptioncarton1">Je souhaite que le démènageur emballe mes cartons fragiles </label>
+                                    </div>
+
+
+{/*<MDBInput type="checkbox" id="d1" checked={d1} onChange={handeld1} className="check-box-e-commerce"/>
+ 
+ 
+ 
+  <div>Je souhaite que le démènageur emballe mes cartons fragiles </div>*/
+}
+  </div>
 
 
 <h1 className="product-titles">Pour les vêtements sur cintre</h1>
-<div className="carton-cathegorie-bloc">{produit3.map((e)=><Item  add={()=>handelshow(e)}  url={e.url} name={e.name} prix={e.prix} dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}</div>
-
-
+<div className="carton-cathegorie-bloc">{produit3.map((e)=><Item 
+ add={()=>handelshow(e)}  url={e.url} name={e.name} prix={e.prix}
+ minus={()=>handelminus(e)}
+ dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}</div>
 <h1 className="product-titles">Autres fournitures</h1>
-<div className="carton-cathegorie-bloc">{produit4.map((e)=><Item  add={()=>handelshow(e)} url={e.url} name={e.name} prix={e.prix} dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}</div>
+<div className="carton-cathegorie-bloc">{produit4.map((e)=><Item 
+ add={()=>handelshow(e)} url={e.url} name={e.name} prix={e.prix} 
+ minus={()=>handelminus(e)}
+ dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}</div>
   
   
   {show &&(
