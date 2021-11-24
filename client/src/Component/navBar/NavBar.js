@@ -68,7 +68,7 @@ export default function NavBar() {
 
 <div className="item"><Link to="/presentation" style={{"textDecoration" : "none"}}>TMS-DEM</Link></div>
 <div className="item"><Link to="/services">Nos services</Link>  </div>
-<div className="item"><Link to="/e-commerce">Boutique</Link> </div>
+<div className="item"><Link to="/boutique">Boutique</Link> </div>
 <div className="item"><Link to="/contact">Contact</Link>  </div>
 <div className="btn-devis largeMenu">
   <button> <Link to="/soto">Demander un devis</Link></button>

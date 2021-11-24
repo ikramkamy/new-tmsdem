@@ -172,18 +172,19 @@ Attention, ne pas oublier de compter le cabanon de
                 <option value="chaise 0.5 30" >Chaise</option>
                 <option value="lit 2  30" >Lit</option>
                 <option value="carton 0.75 30">Carton livre</option>
-                <option value="carton 1 30">Carton standard</option>
+                <option value="carton 0.1 30">Carton standard</option>
 </select>
   <div className="wrap-elems-room">
     <div className="btns-wrap-room">
       
-  <button  onClick={()=>addelem(e)} className="btn-add-room btnMApAddRoom">  <i class="fas fa-plus"></i> Ajouter</button>
+  <button  onClick={()=>addelem(e)} className="btn-add-room btnMApAddRoom">
+      <i class="fas fa-plus"></i> Ajouter</button>
  
   </div>
       {e.tab?.map((p)=><div className="wrap-btns-cubage-elem">
-      <div className="cubage-item-name" >
-        
-{p.name}</div>
+      <div className="cubage-item-name" >{p.name}</div>
+
+<div  className="wrap-btn-quantie">
       <button onClick={()=>qminus(p)} className="buttonCOntMinus">
         -
        {/* <FaMinus  className="cubage-icon"/>*/}
@@ -198,6 +199,7 @@ Attention, ne pas oublier de compter le cabanon de
         
         
         </button>
+</div>
   </div>)}
 
 

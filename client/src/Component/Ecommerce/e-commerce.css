@@ -140,7 +140,7 @@ font-weight: 600;
     height: auto;
     width: 450px;
     border: 1px solid lightgray;
-    box-shadow: 2px 2px 2px 2px lightgray;
+    /*box-shadow: 2px 2px 2px 2px lightgray;*/
     margin-right: 10px;
    /* position: fixed;
     top: 70px;

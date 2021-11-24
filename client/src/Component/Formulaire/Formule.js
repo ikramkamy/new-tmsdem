@@ -317,6 +317,7 @@ const Formulefinale = () => {
         <div className="principal-formulaire">
 
             {showpdf && (
+                <div className="modal-cart">
                 <div className="pdf-stylig">
                     <div className="wrap-pdf-stylig" id="all">
                         <Pdfinvent generatepdf={generatepdf} className="wrap-pdf" >
@@ -361,6 +362,7 @@ const Formulefinale = () => {
                     </div>
                     <div className=" btn-formule btn-download"
                         onClick={generatepdf}>Télècharger</div>
+                        </div>
                 </div>)}
 
             <div style={{ width: "80%" }}>

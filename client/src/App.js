@@ -16,6 +16,8 @@ import Pdfinvent from './Component/Pdfinventaire';
 import Chrono from './Component/Chrono';
 import Comp from '../src/images/Comp 1.gif'
 import Ecommerceall from './Component/Ecommerce/Ecommerceall';
+import Signin from './Component/Signin';
+import Admin from './Component/admin';
 function App() {
 
   const [showAlertBox, setShowAlertBox] = useState(false)
@@ -64,19 +66,18 @@ const show=()=>{
 
    </Route>
   
+<Route  path="/admin"    component={Admin}  />
 
-
-   <Route  path="/boutique">
+  <Route  path="/boutique">
   <NavBar/>
   <div className="originalBoutiquePage"> 
   <div className="originalBoutiqueContainer"> 
 
- <h1 className="boutTitle"> Notre Boutique </h1>
- 
-  <Ecommerce  sendPrixcarton={sendPrixcarton}  className="ecommComponent" Style={{border : "1px solid red"}} />
-  
+  <h1 className="boutTitle"> Notre Boutique </h1>
+  <Ecommerceall sendPrixcarton={sendPrixcarton}  
+  className="ecommComponent" 
+  Style={{border : "1px solid red"}} />
   </div>
-
 {
 
 showAlertBox && <div className="alertBoxBoutique">
@@ -98,10 +99,6 @@ showAlertBox && <div className="alertBoxBoutique">
     </div>
 
 }
- 
-
-
-
   </div>
 <Footer/>
 
@@ -136,11 +133,9 @@ showAlertBox && <div className="alertBoxBoutique">
   <Contactus/>
   <Footer/>
 </Route>
-
+<Route   exact path="/signin"     component={Signin}/>
 <Route exact path="/pdf"><Pdfinvent/></Route>
    </Switch>
-   
-   
    </Router>
     </div>
   );

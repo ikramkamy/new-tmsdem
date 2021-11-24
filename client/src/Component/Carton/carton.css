@@ -189,15 +189,7 @@ height: auto;
     margin-left: 18px;
 }
 /***************************ROOM STYLING********************/
-.btn-add-room{
 
-    
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 5px 5px 5px 5px;
-    cursor: pointer;
-}
 /****************************ROOM STYLE*******************************/
 .wrap-room{
     display: flex; 
@@ -240,7 +232,18 @@ height: auto;
     width: 60%;
     margin-bottom: 5px;
     margin-top: 15px;
-    height: 30px;
+    height: auto;
+    /*j'ai chancger ici parce que ça a cause un scroll*/
+}
+.btn-add-room{
+
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    
 }
 .fas.fa-plus {
     margin-right: 10px;
@@ -257,12 +260,17 @@ height: auto;
 .wrap-btns-cubage-elem button{
 border: none;
 background-color: transparent;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 .cubage-item-name{
     width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
+    border: 1px hidden red;
 }
 .cubage-quantite{
     display: flex;
@@ -289,4 +297,10 @@ background-color: none;
     width: 30px;
     font-size: 2em;
     color: #2C216F;
+}
+.wrap-btn-quantie{
+    border: 1px hidden red;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
 }

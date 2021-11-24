@@ -112,6 +112,7 @@ const handelform44=()=>{
 /********************************************/
 const handelform45=()=>{
   setForm45(!form45);
+  console.log("checked",form45)
   if(form45==false){setVal45(130);}
   else{setVal45(0);}
 }
@@ -236,9 +237,6 @@ const sendPrixcarton=(data)=>{
     setVarchange(varchange+1);
     */
 }
-
-
-
 /***********************************************************************************/
  return(<div className="principal-formulaire">
 
@@ -257,13 +255,13 @@ Choisissez vos options et votre devis se recalcule automatiquement.</div>
 <div className="check-box-principl">
 
 <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="4 h" id="f1" value="4 h" name="rdB8" checked={form4}  /*checked={autoO}*/ onChange={handelform4} />
+                                    <input  type="radio" label="4 h" id="f1" value="4 h" /*name="rdB8"*/ checked={form4}  /*checked={autoO}*/ onClick={handelform4} />
                                     <label for="4 h"> 4 h</label>
                                     </div>
 
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="7 h" id="f2" value="7 h" name="rdB8" checked={form7}  /*checked={autoO}*/ onChange={handelform7} />
+                                    <input  type="radio" label="7 h" id="f2" value="7 h" /*name="rdB8"*/ checked={form7}  /*checked={autoO}*/ onClick={handelform7} />
                                     <label for="7 h"> 7 h</label>
                                     </div>
 
@@ -285,13 +283,13 @@ Choisissez vos options et votre devis se recalcule automatiquement.</div>
 
 
 <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="une personne + un camion" id="form41" value="une personne + un camion" name="rdB9" checked={form41}  /*checked={autoO}*/ onChange={handelform41} />
+                                    <input  type="radio" label="une personne + un camion" id="form41" value="une personne + un camion" /*name="rdB9"*/ checked={form41}  /*checked={autoO}*/ onClick={handelform41} />
                                     <label for="une personne + un camion"> 1 personne  +  un camion</label>
                                     </div>
 
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="2 personnes + un camion" id="form42" value="2 personnes + un camion" name="rdB9" checked={form42}  /*checked={autoO}*/ onChange={handelform42} />
+                                    <input  type="radio" label="2 personnes + un camion" id="form42" value="2 personnes + un camion" /*name="rdB9"*/ checked={form42}  /*checked={autoO}*/ onClick={handelform42} />
                                     <label for="2 personnes + un camion"> 2 personnes + un camion</label>
                                     </div>
 
@@ -300,19 +298,17 @@ Choisissez vos options et votre devis se recalcule automatiquement.</div>
 
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="3 personnes + un camion" id="form43" value="3 personnes + un camion" name="rdB9" checked={form43}  /*checked={autoO}*/ onChange={handelform43} />
+                                    <input  type="radio" label="3 personnes + un camion" id="form43" value="3 personnes + un camion" /*name="rdB9"*/ checked={form43}  /*checked={autoO}*/ onClick={handelform43} />
                                     <label for="3 personnes + un camion"> 3 personnes + un camion</label>
                                     </div>
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="4 personnes + un camion" id="form44" value="4 personnes + un camion" name="rdB9" checked={form44}  /*checked={autoO}*/ onChange={handelform44} />
+                                    <input  type="radio" label="4 personnes + un camion" id="form44" value="4 personnes + un camion" /*name="rdB9"*/ checked={form44}  /*checked={autoO}*/ onClick={handelform44} />
                                     <label for="4 personnes + un camion"> 4 personnes + un camion</label>
                                     </div>
 
-
-
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="un camion additionnel" id="form42" value="Un camion additionnel" name="rdB9" checked={form45}  /*checked={autoO}*/ onChange={handelform45} />
+                                    <input  type="radio" label="un camion additionnel" id="form42" value="Un camion additionnel" /*name="rdB9"*/ checked={form45}  /*checked={autoO}*/ onClick={handelform45} />
                                     <label for="un camion additionnel">1 camion additionnel</label>
                                     </div>
 {/*<MDBInput label="une personne + un camion" type="checkbox" id="form41" checked={form41} onChange={handelform41}/>
@@ -341,14 +337,14 @@ Choisissez vos options et votre devis se recalcule automatiquement.</div>
 
 
 <div style={{display:"flex"}}> 
-                                    <input  type="radio" label=" 1 personne + un camion" id="form71" value="1 personne + un camion" name="rdB10" checked={form71}  /*checked={autoO}*/ onChange={handelform71} />
+                                    <input  type="radio" label=" 1 personne + un camion" id="form71" value="1 personne + un camion" /*name="rdB10"*/ checked={form71}  /*checked={autoO}*/ onClick={handelform71}/>
                                     <label for="1 personne + un camion"> 1 personne + un camion</label>
                                     </div>
 
 
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="2 personnes + un camion" id="form72" value="2 personnes + un camion" name="rdB10" checked={form72}  /*checked={autoO}*/ onChange={handelform72} />
+                                    <input  type="radio" label="2 personnes + un camion" id="form72" value="2 personnes + un camion" /*name="rdB10"*/ checked={form72}  /*checked={autoO}*/ onClick={handelform72}/>
                                     <label for=" 2 personnes + un camion"> 2 personnes + un camion</label>
                                     </div>
 
@@ -356,20 +352,20 @@ Choisissez vos options et votre devis se recalcule automatiquement.</div>
 
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label=" 3 personnes + un camion" id="form73" value="3 personnes + un camion" name="rdB10" checked={form73}  /*checked={autoO}*/ onChange={handelform73} />
+                                    <input  type="radio" label=" 3 personnes + un camion" id="form73" value="3 personnes + un camion" /*name="rdB10"*/ checked={form73}  /*checked={autoO}*/ onClick={handelform73}/>
                                     <label for=" 3 personnes + un camion"> 3 personnes + un camion</label>
                                     </div>
 
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="4 personnes + un camion" id="form74" value="4 personnes + un camion" name="rdB10" checked={form74}  /*checked={autoO}*/ onChange={handelform74} />
+                                    <input  type="radio" label="4 personnes + un camion" id="form74" value="4 personnes + un camion" /*name="rdB10"*/ checked={form74}  /*checked={autoO}*/ onClick={handelform74} />
                                     <label for=" 4 personnes + un camion"> 4 personnes + un camion</label>
                                     </div>
 
 
 
                                     <div style={{display:"flex"}}> 
-                                    <input  type="radio" label="un camion additionnel" id="form75" value="Un camion additionnel" name="rdB10" checked={form75}  /*checked={autoO}*/ onChange={handelform75} />
+                                    <input  type="radio" label="un camion additionnel" id="form75" value="Un camion additionnel" /*name="rdB10"*/ checked={form75}  /*checked={autoO}*/ onClick={handelform75} />
                                     <label for="un camion additionnel">1 camion additionnel</label>
                                     </div>
 

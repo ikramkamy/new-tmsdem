@@ -186,12 +186,11 @@ const handelminus=(e)=>{
     setPrixcarton(prixcarton-Number(e.prix.split(" ")[0]))
     setIncrement(increment+1)
   }
- 
 }
 
 useEffect(()=>{
   sendPrixcarton(prixcarton);
-  sendCart(cart);
+  /*sendCart(cart);*/
   console.log("prixcarton",prixcarton)
 
 },[prixcarton])

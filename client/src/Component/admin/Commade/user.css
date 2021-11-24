@@ -1,0 +1,14 @@
+.user{
+    display: flex;
+    justify-content: space-between;
+    border: 1px hidden blue;
+    background-color: rgba(44,33,111,.2);
+    color: #2C216F;
+}
+.elem-cmnd-list{
+    width: 16.66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

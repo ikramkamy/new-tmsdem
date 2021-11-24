@@ -1,0 +1,40 @@
+.item-admin{
+width:100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.title-admin-inter{
+    text-align: center;
+}
+.item-admin-inter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: 1px hidden red;
+}
+.wrap-delete-btns{
+    border: 1px hidden red;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+}
+.items-commande{
+    width: 85%;
+}
+.icon-delete{
+    color: red;
+    cursor: pointer;
+}
+.icon-edite{
+    color: blue;
+    cursor: pointer;
+}
+.icon-edite a{
+text-decoration: none;
+}

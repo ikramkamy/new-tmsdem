@@ -4,7 +4,9 @@ import './ecommerceAll.css';
 import { FaArrowCircleLeft, FaLock, FaMinus, FaPlus, FaTrash} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ItemAll from './ItemwrapAll';
-import  {MDBInput}  from 'mdbreact';
+//import  {MDBInput}  from 'mdbreact';
+import Signin from '../Signin';
+import axios from 'axios';
 const Ecommerceall=(props)=>{
 const{sendPrixcarton,sendCart}=props;
 const[prixcarton,setPrixcarton]=useState(0);
@@ -150,12 +152,22 @@ const add=(e)=>{
 */
 
 const handelshow=(e)=>{
+console.log("index of",cart.indexOf(e))
+if(cart.indexOf(e)!==-1){
+  
+  setShow(true);
+  e.quantite=e.quantite+1
+  setPrixcarton(prixcarton+Number(e.prix.split(" ")[0]))
+  console.log("ptix total",prixcarton)
+  setIncrement(increment+1)
+}else{
   setCart([...cart,e]);
   setShow(true);
   e.quantite=e.quantite+1
   setPrixcarton(prixcarton+Number(e.prix.split(" ")[0]))
   console.log("ptix total",prixcarton)
   setIncrement(increment+1)
+}
 }
 const handelminus=(e)=>{
   if(e.quantite==0){
@@ -169,19 +181,19 @@ const handelminus=(e)=>{
 
 useEffect(()=>{
   sendPrixcarton(prixcarton);
-  sendCart(cart);
-  //console.log("prixcarton",prixcarton)
+  //sendCart(cart);
+  console.log("prixcarton",prixcarton)
 
 },[prixcarton])
-console.log("CART",cart);
+//console.log("CART",cart);
 const [quantite,setQuantite]=useState(0)
 const plus=()=>{
   setQuantite(quantite+1) ;
 }
 
-/********************************************La somme des cartons****************************************/
+/*****************************La somme des cartons****************************************/
 
-/*****************************Chekbox For Ecommerce**************************************** */
+/*****************************Chekbox For Ecommerce***************************************/
 const[d,setD]=useState(false);
 const handeld=()=>{
   setD(!d) 
@@ -190,6 +202,57 @@ const[d1,setD1]=useState(false);
 const handeld1=()=>{
   setD1(!d1) 
 }
+/***************************valiser l'inscription***************************/
+const [showsignin, setShowsignin]=useState(true)
+const token=localStorage.getItem('token');
+useEffect(()=>{
+if(token===null){
+  const modal = document.querySelector(".modal")
+    const closeBtn3 = document.querySelector(".close3")
+    modal.style.display = "block";
+    closeBtn3.addEventListener("click", () => {
+      modal.style.display = "none";
+    })
+console.log("WE ARE NO ADDING PRODUCT BEFOR SIGN IN")
+}else{
+setShowsignin(false)
+console.log("votre session est ouvert vous pouvez commander")
+}
+},[])
+
+/*********************FETCHER LES UTILISATEUR PAR ID*************/
+const [user,setUser]=useState();
+const _id=localStorage.getItem('user_id');
+//console.log("user",_id)
+useEffect(()=>{
+axios.get(`/getuserbyid/${_id}`).then((response)=>{
+
+  setUser(response.data);
+  console.log("we are getting data unser for Ecommerceall")
+}).catch((err)=>{
+})
+},[])
+/*****************ENVOYER LA COMMANDE A LADMIN***********/
+const [commande,setCommande]=useState({
+  user:[],
+  cart:[],
+});
+useEffect(()=>{
+  setCommande({
+    user:user,
+    cart:cart,
+  })
+console.log("la commande est pret à envoyer",commande)
+},[])
+const handelcommande=()=>{
+axios.post('/ajouter-une-commande',commande).then(()=>{
+alert("votre commande a étè envoyée avce succés")
+
+}).catch((err)=>{})}
+
+
+
+
 return(
 
 
@@ -242,8 +305,10 @@ dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}<
  
  <div className="cart-title">
    <h3>Mon panier</h3>
+   
  <div onClick={()=>setShow(false)} className="close-cart">&times;</div>
  </div>
+    <h4>{user[0].firstName} {user[0].lastName}</h4>
      {cart.map((e)=><div className="myrow">
      <div className="cart-item">{e.name}</div>
      <img src={e.url} style={{height:"50px",width:"50px"}}/>
@@ -255,19 +320,26 @@ dimmension={e.dimmension} quantite={e.quantite} description={e.description}/>)}<
      </div>
   </div>)} 
 
-  <div >Envoyer la commande </div>
+  <div className="btn-commande" onClick={handelcommande}>Envoyer la commande </div>
   </div> 
     
   </div>)}   
 
   
-  
-  
-  
- 
- 
+  {showsignin && (<div>
 
-   
+    <div className="js-btn"></div>
+    <div class="modal">
+    <div class="modal_content-signin">
+    <span class="close3">&times;</span> 
+    <Signin/>
+     
+   </div>
+</div>
+
+  </div>)}
+  
+
 
 
     
